@@ -1,0 +1,51 @@
+.footer {
+    background-color: white;
+    font-family: 'Plus Jakarta Sans';
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 76px;
+    padding-top: 34px;
+    padding-bottom: 47px;
+}
+.pack {
+    display: flex;
+    gap: 9px;
+}
+
+.buyandsellhome h3, .buyrentsell h3, .about-and-resources h3{
+    color: black;
+    font-size: 16px;
+}
+
+.Estatery{
+    font-family: 'Plus Jakarta Sans';
+    font-size: 24px;
+    color: #0E0854;
+}
+.para {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #000929;
+    font-size: 16px;
+    gap: 17px;
+}
+.buyandsellhome, .buyrentsell, .about-and-resources {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 31px;
+}
+
+.sell, .buy, .rent, .terms, .about, .resource {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.pack img {
+    position: relative;
+    top: -5px;
+}
