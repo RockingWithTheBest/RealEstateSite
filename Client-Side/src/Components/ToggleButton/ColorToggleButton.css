@@ -1,0 +1,31 @@
+form.rent-sell-buy {
+    display: flex;
+    column-gap: 23px;
+}
+
+.MainControll {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+form.rent-sell-buy {
+    display: flex;
+    column-gap: 23px;
+    background-color: white;
+    max-width: 607px;
+    border-radius: 4px;
+}
+.section3 {
+    padding-top: 17px;
+    padding-right: 3px;
+}
+.section2 {
+    padding-top: 11px;
+    padding-bottom: 15px;
+}
+.section1 {
+    padding-left: 22px;
+    padding-top: 14px;
+}
