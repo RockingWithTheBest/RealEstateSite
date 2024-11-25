@@ -1,0 +1,44 @@
+.BodyTwo-Menu {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 100px;
+}
+.PBLO {
+    display: grid;
+    grid-template-columns: repeat(2, 38%);
+    grid-auto-rows: 215px;
+    grid-column-gap: 67px;
+    justify-content: center;
+}
+
+.newHome h2 {
+    margin-top: -255px;
+}
+
+.BodyTwo-Menu Button {
+    background-color: #100A55;
+    width: 159px;
+
+}
+.BodyTwo-Menu span{
+    font-size: 11px;
+    color : #fff;
+}
+.BodyTwo-Menu h2{
+    color : #100A55;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 11px;
+}
+.BodyTwo-Menu p{
+    color: #100A55;
+    margin-bottom: 21px;
+}
+
+.PBLO p{
+    color: #4D5461;
+    font-size: 14px;
+}
