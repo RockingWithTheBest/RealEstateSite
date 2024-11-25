@@ -1,0 +1,103 @@
+.backSlideDsiplay {
+    background-color: #100A55;
+    padding-bottom: 136px;
+}
+
+.landlord-Tenant {
+    display: flex;
+    justify-content: center;
+    padding: 150px;
+    gap: 234px;
+}
+
+.virtualBest {
+    margin: 62px;
+    display: flex;
+    justify-content: center;
+    gap: 19px;
+}
+
+.averaging {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 139px;
+    margin-top: 48px;
+}
+
+.white {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 19px;
+    width: 700px;
+}
+
+.white h2 {
+    color: black;
+    font-size: 24px;
+    font-family: 'Plus Jakarta Sans';
+}
+.white p {
+    color: #8f8888;
+    font-size: 16px;
+    font-family: 'Plus Jakarta Sans';
+}
+
+.deeppurple {
+    background-color: #7065F0;
+    padding: 15px;
+    border-radius: 19px;
+    width: 700px;
+}
+.deeppurple img {
+    background: white;
+    border-radius: 6px;
+}
+.lightpurple {
+    background-color: #312F4B;
+    padding: 15px;
+    border-radius: 19px;
+    width: 700px;
+}
+
+h2.landloadheader {
+    font-family: 'Plus Jakarta Sans';
+    font-size: 40px;
+    color: white;
+}
+
+p.landloadheader {
+    font-family: 'Plus Jakarta Sans';
+    font-size: 16px;
+}
+
+.averaging h2 {
+    font-size: 40px;
+    font-family: 'Plus Jakarta Sans';
+    color: white;
+}
+
+.averaging p {
+    font-size: 16px;
+    color: white;
+    font-family: 'Plus Jakarta Sans';
+}
+
+.lightpurple, .white, .deeppurple{
+    animation-name: lightpurple;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+}
+
+@keyframes lightpurple {
+    0%{ transform:translateX(0px); }
+    25%{ transform:translateX(60px); }
+    50%{transform:translateX(0px); }
+    75%{ transform:translateX(-60px); }
+}
+
+
+
+/*  */
