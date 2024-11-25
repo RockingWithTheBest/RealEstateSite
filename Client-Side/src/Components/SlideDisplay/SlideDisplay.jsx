@@ -55,6 +55,7 @@ const SlideDisplay =()=>{
             </div>
         </div>
     </div>
+
  );
 };
 

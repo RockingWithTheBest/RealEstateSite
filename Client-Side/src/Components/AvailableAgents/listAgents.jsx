@@ -1,8 +1,5 @@
 import React from 'react';
 import './listAgents.css';
-
-
-// import * as React from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Divider from '@mui/material/Divider';

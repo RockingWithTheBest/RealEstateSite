@@ -1,9 +1,8 @@
 import React from 'react';
 import Vector from '../../assets/HeaderImg/Vector.png';
 import Hanger from '../../assets/HeaderImg/Hanger.png';
-import './Header.css';
 import Button from '@mui/material/Button';
-
+import './Header.css';
 
 const Header =()=>{
     return(

@@ -1,18 +1,21 @@
 import React from 'react';
-import './App.css'
-import Page from './Pages/MainPage'
-import Map from './Pages/Map/Maps'
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Page from './Pages/MainPage';
+import Map from './Pages/Map/Maps';
+import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-          <Route exact path="/" element={<Page />} />
-          <Route exact path="/Map" element={<Map />} />
-      </Routes> 
+      <div>
+
+        <Routes>
+          <Route path="/" element={<Page />} /> {/* MainPage Component */}
+          <Route path="/map" element={<Map />} /> {/* Map Component */}
+        </Routes>
+      </div>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

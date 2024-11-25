@@ -9,12 +9,12 @@ import Footer from '../Components/Footer/footer';
 const Page=()=>{
     return(
         <div>
-           <Header/>
-           <BodYOne/> 
-           <Properties/>
-           <SlideDisplay/>  
-           <LandLordQuestion/>
-           <Footer/>
+            <Header/>
+            <BodYOne/> 
+            <Properties/>
+            <SlideDisplay/>  
+            <LandLordQuestion/>
+            <Footer/>
         </div>
     );
 };

@@ -13,6 +13,7 @@ const LandLordQuestion =()=>{
             </div>
             <p>Join <span className="tenthousand">10,000+</span> other landlords in our estatery community.</p>
         </div>
+       
     )
 }
 export default LandLordQuestion;

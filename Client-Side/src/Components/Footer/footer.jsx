@@ -1,7 +1,7 @@
 import React from 'react';
 import './footer.css';
 import Pack from '../../assets/footer/pack.png'
-import Footer2 from '../Footer/footer'
+import Footer2 from '../Footer2/footer2'
 
 const footer =()=>{
     return(
@@ -67,7 +67,7 @@ const footer =()=>{
             </div>
             <Footer2/>
         </div>
-       
+    //    <div>ldhfvdjk</div>
     )
 }
 export default footer;

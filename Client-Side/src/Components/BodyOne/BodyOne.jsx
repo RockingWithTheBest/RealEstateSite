@@ -2,8 +2,9 @@ import React from 'react';
 import ColorToggleButton from '../ToggleButton/ColorToggleButton';
 import IconKey from '../../assets/BodyOneImg/IconKey.png';
 import IconSearch from '../../assets/BodyOneImg/IconSearch.png'; 
-import './BodyOne.css'
+
 import BodyTwo from '../BodyTwo/BodyTwo';
+import './BodyOne.css'
 
 
 const BodYOne =() => {
@@ -40,6 +41,7 @@ const BodYOne =() => {
             </div>
             
         </div>
+    
     );
 };
 
