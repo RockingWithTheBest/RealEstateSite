@@ -1,0 +1,101 @@
+.properties{
+    background-color: #F0EFFB;
+    padding-bottom: 100px;
+}
+
+.sixcards {
+    display: grid;
+    grid-template-columns: repeat(3, 352px);
+    grid-gap: 36px;
+    justify-content: center;
+}
+p.amount {
+    color: #7065F0;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Plus Jakarta sans';
+}
+.amount span{
+    color: #7c7993;
+    font-size: 16px;
+    font-weight: 500;
+}
+p.nameplace {
+    color: #000929;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Plus Jakarta Sans';
+}
+p.locationonmap {
+    font-size: 16px;
+    font-family: 'Plus Jakarta Sans';
+    color: grey;
+}
+.material {
+    display: flex;
+    justify-content: center;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 14px;
+    gap: 13px;
+}
+.prop1, .prop2, .prop3, .prop4, .prop5, .prop6{
+    background: white;
+    height: 396px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+p.amount, p.nameplace, p.locationonmap, .material {
+    margin-left: 9px;
+}
+
+.viewmap{
+    background-color:#100A55;
+}
+
+
+.btnViewmap {
+    margin-top: 61px;
+}
+
+img.mapsearch {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    left: -39px;
+    border-radius: 50%;
+}
+
+.rentsearch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 719px;
+    margin-bottom: 29px;
+    margin-top: 35px;
+}
+
+.properties h2 {
+    padding-top: 87px;
+    font-size: 40px;
+    font-family: 'Plus Jakarta Sans';
+    color: #000929;
+}
+
+.pickedproperties{
+    margin-top: 12px;
+    font-size: 16px;
+    font-family: 'Plus Jakarta Sans';
+}
+
+.typesearch {
+    border: 2px solid #F0EFFB;
+    background: #E0DEF7;
+    font-family: 'Plus Jakarta Sans';
+    padding: 20px;
+    border-radius: 9px;
+    width: 258px;
+    font-size: 18px;
+}
