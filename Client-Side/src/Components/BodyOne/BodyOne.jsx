@@ -34,7 +34,6 @@ const BodYOne =() => {
                     <p className='ten'>10k+ properties</p>
                     <p className='occupance'>and houses ready for occupance</p>
                 </div>
-                {/* <img src={HouseAdvert} alt="" className='advert' /> */}
             </div>
             <div>
                 <BodyTwo/>

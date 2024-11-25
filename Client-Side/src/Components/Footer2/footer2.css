@@ -1,0 +1,15 @@
+.footer2{
+    background: #FFFF;
+    color: black;
+    font-family: 'Plus Jakarta Sans';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 836px;
+    padding-bottom: 25px;
+}
+
+.faceinst {
+    display: flex;
+    gap: 12px;
+}

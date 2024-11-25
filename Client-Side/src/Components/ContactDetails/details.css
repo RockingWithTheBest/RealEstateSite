@@ -1,0 +1,76 @@
+
+.displayPhoto img {
+    border-radius: 262px;
+    width: 346px;
+    height: 346px;
+    object-fit: cover;
+}
+
+.dash {
+    background: #E0DEF7;
+    width: 57.5rem;
+    border-radius: 33px;
+    height: 614px;
+}
+
+.displayPhoto {
+    position: relative;
+    top: -160px;
+}
+.dash h1 {
+    font-size: 33px;
+    line-height: 2;
+    color: #100A55;
+}
+
+
+.dash p {
+    font-size: 20px;
+    color: #100A55;
+}
+
+p.location {
+    font-size: 16px;
+}
+
+.agentdetail {
+    margin-top: -136px;
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+}
+.evalaurion {
+    display: flex;
+    gap: 33px;
+    justify-content: center;
+    margin-top: -38px;
+}
+
+p.agentrent, p.agentbuy , p.agentsell{
+    color: #7065F0;
+    font-weight: 700;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 37px;
+    margin-bottom: -15px;
+}
+
+p.propeva {
+    font-size: 15px;
+}
+
+.message img {
+    width: 37px;
+    height: 50px;
+}
+
+.message {
+    position: relative;
+    top: -331px;
+    margin-left: 701px;
+}
+.message p {
+    font-size: 14px;
+    margin-top: -47px;
+    margin-left: 106px;
+}
+

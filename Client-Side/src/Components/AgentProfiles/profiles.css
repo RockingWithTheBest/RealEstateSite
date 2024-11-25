@@ -1,0 +1,46 @@
+.profiles {
+  background-color: #7065F0;
+    color: black;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    gap: 253px;
+}
+.Avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Plus Jakarta Sans';
+    background-color: #312F4B;
+    color: white;
+    width: 349px;
+    padding-top: 38px;
+}
+
+.Avatar p:hover{
+    cursor:  pointer;
+    /* font-size: 1.5em; */
+}
+
+.avatadetails {
+    margin-top: 108px;
+    font-size: 21px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-left: -33px;
+}
+
+h4.avatarname {
+    font-size: 20px;
+    font-weight: 800;
+}
+.contact {
+    margin-top: 209px;
+}
+
+.avatarcontact:hover, .avatarprop:hover, .avatarcomment:hover{
+    font-size: 24px;
+}

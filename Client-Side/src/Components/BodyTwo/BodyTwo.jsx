@@ -22,36 +22,35 @@ const bac = {
 
 const BodyTwo = ()=>{
     return(
-        // <div className='BodyTwo-Menu'>
-        //     <div className='newHome' style={bac}>
-        //         <h2>The new way to find your new home</h2>
-        //         <p>Find your dream place to live in with more than 10k+ properties listed.</p>
-        //         <Button variant="contained"><span>Browse Properties</span></Button>
-        //     </div>
-        //     <div className='PBLO'>
-        //         <div>
-        //             <img src ={check} alt="" />
-        //             <h3>Property Insurance</h3>
-        //             <p>We offer our customer property protection of liability coverage and insurance for their better life.</p>
-        //         </div>
-        //         <div>
-        //             <img src={Dollar} alt="" />
-        //             <h3>Best Price</h3>
-        //             <p>Not sure what  you should be charging for your property? No need to worry, let us do the numbers for you.</p>
-        //         </div>
-        //         <div>
-        //             <img src={dropdown} alt="" />
-        //             <h3>Lowest Commission</h3>
-        //             <p>You no longer have to negotiate commissions and haggle with other agents it only cost 2%!</p>
-        //         </div>
-        //         <div>
-        //             <img src={HouseIcon} alt="" />
-        //             <h3>Overall Control</h3>
-        //             <p>Get a virtual tour, and schedule visits before you rent or buy any properties. You get overall control.</p>
-        //         </div>
-        //     </div>
-        // </div>
-        <div>dfvldbvk</div>
+        <div className='BodyTwo-Menu'>
+            <div className='newHome' style={bac}>
+                <h2>The new way to find your new home</h2>
+                <p>Find your dream place to live in with more than 10k+ properties listed.</p>
+                <Button variant="contained"><span>Browse Properties</span></Button>
+            </div>
+            <div className='PBLO'>
+                <div>
+                    <img src ={check} alt="" />
+                    <h3>Property Insurance</h3>
+                    <p>We offer our customer property protection of liability coverage and insurance for their better life.</p>
+                </div>
+                <div>
+                    <img src={Dollar} alt="" />
+                    <h3>Best Price</h3>
+                    <p>Not sure what  you should be charging for your property? No need to worry, let us do the numbers for you.</p>
+                </div>
+                <div>
+                    <img src={dropdown} alt="" />
+                    <h3>Lowest Commission</h3>
+                    <p>You no longer have to negotiate commissions and haggle with other agents it only cost 2%!</p>
+                </div>
+                <div>
+                    <img src={HouseIcon} alt="" />
+                    <h3>Overall Control</h3>
+                    <p>Get a virtual tour, and schedule visits before you rent or buy any properties. You get overall control.</p>
+                </div>
+            </div>
+        </div>
     )
  
 }
