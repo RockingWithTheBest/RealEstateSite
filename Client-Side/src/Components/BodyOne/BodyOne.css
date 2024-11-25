@@ -1,0 +1,47 @@
+.advert{
+    width: 612px;
+    position: relative;
+    top: -91px;
+}
+.BodyOne {
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    background-color: #e0def757;
+}
+span.BuySellProperty {
+    font-size: 64px;
+    font-weight: bold;
+    color: #000929;
+}
+p.BuySellProperty-para {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000929;
+    margin-top: 61px;
+    margin-bottom: 38px;
+}
+.Renters-Properties {
+    margin-top: 135px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 41px;
+}
+
+.fifty, .ten{
+    color: #7065F0;
+    font-size: 24px;
+    font-weight: bold;
+}
+.Renters p:last-child, .Properties p:last-child {
+    color: #000929;
+    font-size: 16px;
+}
+
+
+
+
+.heading {
+    margin-top: 135px;
+}
