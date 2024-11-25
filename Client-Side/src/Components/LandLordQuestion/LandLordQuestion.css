@@ -1,0 +1,30 @@
+.agentscoments {
+    display: flex;
+    background: #F7F7FD;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding-top: 47px;
+    padding-bottom: 77px;
+}
+
+.agentscoments h2 {
+    font-size: 24px;
+    color: #7065F0;
+    font-family: 'Plus Jakarta Sans';
+}
+.agentscoments h3 {
+    font-family: 'Plus Jakarta Sans';
+    font-size: 40px;
+    color: black;
+}
+.agentscoments p {
+    font-size: 18px;
+    color: #000929;
+    font-family: 'Plus Jakarta Sans';
+}
+
+.tenthousand{
+    color: #7065F0;
+}
