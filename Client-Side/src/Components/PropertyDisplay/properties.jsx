@@ -27,7 +27,7 @@ const Properties = ()=>{
                 display: 'flex', 
                 gap:'17px', 
                 borderRadius:'9px'}}>
-                <button>Rent</button><button>Buy</button><button>Sell</button></Box></div>
+                <Link to = 'agentprofiles'><button>Agent Listing</button></Link><button>Buy</button><button>Sell</button></Box></div>
                 <div><input className='typesearch' type="text" placeholder='Search...'></input><img src={searchIcon} alt="" className='mapsearch'/></div>
             </div>
             <div className='sixcards'>

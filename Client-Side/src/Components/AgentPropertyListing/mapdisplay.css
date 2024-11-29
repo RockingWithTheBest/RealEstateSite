@@ -1,0 +1,30 @@
+.sixcardsList {
+    display: grid;
+    grid-template-columns: repeat(2, 352px);
+    grid-gap: 31px;
+}
+#map {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    outline-style: none;
+    border-radius: 16px;
+}
+.mapdisplay {
+    display: flex;
+    margin-left: 11px;
+    gap: 32px;
+}
+
+.propertyListins h3 {
+    font-size: 29px;
+    font-weight: 600;
+    font-family: 'Plus Jakarta Sans';
+    margin-top: 15px;
+    margin-bottom: 42px;
+    color: #100A55;
+}
+
+.propertyListings {
+    background: #F0EFFB;
+}

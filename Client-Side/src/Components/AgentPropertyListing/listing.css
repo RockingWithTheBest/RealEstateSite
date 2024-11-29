@@ -1,0 +1,12 @@
+.tableData {
+    width: 862px;
+}
+
+.listins {
+    background-color: #7065F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}

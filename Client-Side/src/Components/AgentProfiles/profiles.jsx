@@ -6,7 +6,7 @@ import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import ContactDetails from '../ContactDetails/details'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 
 const agentArray=[

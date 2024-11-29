@@ -4,6 +4,7 @@ import Page from './Pages/MainPage';
 import Map from './Pages/Map/Maps';
 import AgentProfile from './Pages/Profiles/agents';
 import PropertyListing from './Pages/PropertyListing/propertylisting';
+import SingleProperty from './Components/AgentPropertyListing/mapdisplay'
 import './App.css';
 
 function App() {
@@ -12,8 +13,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Page />} /> {/* MainPage Component */}
           <Route path="/map" element={<Map />} /> {/* Map Component */}
-          <Route path ='/agentprofiles' element={<AgentProfile/>}></Route>
+          <Route path ='/agentprofiles' element={<AgentProfile/>}/>
           <Route path='/property-listing' element={<PropertyListing/>}/>
+          <Route path='/singleProperty/:ID' element={<SingleProperty/>} />
         </Routes>
     </BrowserRouter>
   );
