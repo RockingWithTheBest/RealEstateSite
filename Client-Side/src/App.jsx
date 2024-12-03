@@ -5,6 +5,8 @@ import Map from './Pages/Map/Maps';
 import AgentProfile from './Pages/Profiles/agents';
 import PropertyListing from './Pages/PropertyListing/propertylisting';
 import SingleProperty from './Components/AgentPropertyListing/mapdisplay'
+import ClientRegister from './Pages/Register/client'
+import LoginPage  from './Pages/Login/loginpage'
 import './App.css';
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
           <Route path ='/agentprofiles' element={<AgentProfile/>}/>
           <Route path='/property-listing' element={<PropertyListing/>}/>
           <Route path='/singleProperty/:ID' element={<SingleProperty/>} />
+          <Route path='/register-client' element={<ClientRegister/>}/>
+          <Route path='/login' element={<LoginPage/>}/>
         </Routes>
     </BrowserRouter>
   );
