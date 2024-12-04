@@ -8,7 +8,7 @@ import './footer2.css';
 const footerTwo =()=>{
     return(
         <div className='footer2'>
-            <div>©2021 Estatery. All rights reserved</div>
+            <div><span>©2021 Estatery. All rights reserved</span></div>
             <div className='faceinst'>
                 <img src={Facebook} alt="" />
                 <img src={Instagram} alt="" />

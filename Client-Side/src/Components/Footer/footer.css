@@ -49,3 +49,95 @@
     position: relative;
     top: -5px;
 }
+
+@media (max-width: 1092px) {
+    .footer2 {
+        display: flex;
+        gap: 496px;
+    }
+    .footer {
+        display: flex ;
+        gap: 58px;
+    }
+    .Estatery {
+        font-size: 19px;
+        margin-top: -3px;
+    }
+    .sell, .buy, .rent, .terms, .about, .resource {
+        display: flex;
+        gap: 2px;
+    }
+    .buyandsellhome h3, .buyrentsell h3, .about-and-resources h3 {
+        font-size: 13px;
+    }
+    .para {
+        display: flex;
+        font-size: 14px;
+        gap: 1px;
+    }
+    .faceinst {
+        display: flex;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer2 {
+        display: flex ;
+        gap: 300px;
+    }
+}
+
+@media (max-width: 720px) {
+    .footer2 span {
+        font-size: 14px;
+    }
+    .faceinst img {
+        width: 18px;
+    }
+    .para {
+        display: flex;
+        font-size: 11px;
+        gap: 0px;
+    }
+    .buyandsellhome h3, .buyrentsell h3, .about-and-resources h3 {
+        font-size: 10px;
+    }
+    .Estatery {
+        font-size: 15px;
+        margin-top: -7px;
+    }
+}
+
+@media (max-width: 550px){
+    .footer2 span {
+        font-size: 9px;
+    }
+    .footer {
+        display: flex;
+        gap: 20px;
+    }
+    .footer2 {
+        display: flex;
+        gap: 171px;
+    }
+    .faceinst img {
+        width: 14px;
+    }
+}
+
+@media (max-width: 446px){
+    .footer {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(2, 100px);
+    }
+    .footer2 {
+        display: flex;
+        gap: 10px;
+        flex-direction: column-reverse;
+    }
+    .footer2 span {
+        font-size: 13px;
+    }
+}

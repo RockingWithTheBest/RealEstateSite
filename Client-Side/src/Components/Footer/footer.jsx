@@ -1,7 +1,7 @@
 import React from 'react';
-import './footer.css';
 import Pack from '../../assets/footer/pack.png'
 import Footer2 from '../Footer2/footer2'
+import './footer.css';
 
 const footer =()=>{
     return(
