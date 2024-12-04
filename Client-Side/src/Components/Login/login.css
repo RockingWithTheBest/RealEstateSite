@@ -1,0 +1,151 @@
+form.form-login {
+    background: #312F4B;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Plus Jakarta Sans';
+    border-radius: 21px;
+}
+
+input.input-fields {
+    background: white;
+    width: 51%;
+    height: 53px;
+    color: black;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 19px;
+    border-radius: 8px;
+    margin: 10px;
+}
+.form-login h1 {
+    font-size: 32px;
+    margin-top: 35px;
+
+}
+
+.socialNetworks {
+    margin-bottom: 44px;
+}
+
+.form-login h2 {
+    font-size: 32px;
+    margin-top: 35px;
+    margin-bottom: 14px;
+}
+.socialNetworks img {
+    width: 44px;
+    border-radius: 5px;
+    margin-right: 15px;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+
+button.submit-form {
+    background: #7065F0;
+    width: 156px;
+    font-size: 21px;
+    font-family: 'Plus Jakarta Sans';
+    margin-top: 27px;
+    margin-bottom: 30px;
+}
+
+img.user {
+    width: 100px;
+    border-radius: 58px;
+    margin-top: 18px;
+}
+
+@media (max-width: 1079px) {
+    .form-login h1, .form-login h2 {
+        font-size: 25px;
+    }
+
+    input.input-fields { 
+        width: 48%;
+        height: 42px;
+        font-size: 16px;
+    }
+
+    .error {
+        font-size: 13px;
+    }
+
+    button.submit-form {
+        width: 130px;
+        font-size: 17px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+
+    .socialNetworks img {
+        width: 31px;
+        border-radius: 5px;
+        margin-right: 14px;
+        margin-bottom: -30px;
+        cursor: pointer;
+    }
+
+    img.user {
+        width: 78px;
+        margin-top: 16px;
+    }
+    form.form-login {
+        width: 42%;
+    }
+}
+
+@media (max-width: 913px) {
+    .form-login h1, .form-login h2 {
+        font-size: 21px;
+        margin-top: 11px;
+    }
+    img.user {
+        width: 59px;
+    }
+
+    input.input-fields {
+        width: 46%;
+        height: 35px;
+        font-size: 14px;
+    }
+    .error {
+        font-size: 12px;
+    }
+    .socialNetworks img {
+        width: 27px;
+        border-radius: 5px;
+        margin-right: 7px;
+        margin-bottom: -10px;
+        cursor: pointer;
+    }
+    button.submit-form {
+        width: 110px;
+        font-size: 14px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 835px) {
+    input.input-fields {
+        width: 160px;
+        height: 35px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 635px) {
+    img.user {
+        width: 40px;
+    }
+    .form-login h1, .form-login h2 {
+        font-size: 13px;
+        margin-top: 5px;
+    }
+    form.form-login {
+        width: 256px;
+    }
+}
