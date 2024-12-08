@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import MaskGroup from '../../assets/BodyTwoImg/MaskGroup.png'; 
 import check from '../../assets/BodyTwoImg/checkIcon.png'
 import Dollar from '../../assets/BodyTwoImg/DollaSignIcon.png'
 import dropdown from '../../assets/BodyTwoImg/dropdownIcon.png'
 import  HouseIcon from '../../assets/BodyTwoImg/HouseIcon.png'
 import Button from '@mui/material/Button';
+import {useNavigate} from 'react-router-dom';
+
 import './BodyTwo.css'
 
 const bac = {
@@ -21,12 +23,24 @@ const bac = {
 }
 
 const BodyTwo = ()=>{
+    const client_id = localStorage.getItem('client_id')
+    const navigate = useNavigate();
+    const BrowsePage = () => {
+        if(client_id){
+            alert("You are about to be directed to the properties of all Agents page")
+            navigate(`/browser-property/${client_id}`)
+        }
+    }
+
+    useEffect(() =>{
+        
+    },[client_id])
     return(
         <div className='BodyTwo-Menu'>
             <div className='newHome' style={bac}>
                 <h2>The new way to find your new home</h2>
                 <p>Find your dream place to live in with more than 10k+ properties listed.</p>
-                <Button variant="contained"><span>Browse Properties</span></Button>
+                <Button variant="contained" onClick={BrowsePage}><span>Browse Properties</span></Button>
             </div>
             <div className='PBLO'>
                 <div>
