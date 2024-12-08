@@ -1,12 +1,14 @@
-import React from 'react';
-import './profiles.css'
-import Bennies from '../../assets/Agents/ben.jpg';
+import React,{useEffect, useState} from 'react';
+import Bennies from '../../assets/Agents/annie.jpg';
 import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import ContactDetails from '../ContactDetails/details'
+import ProperrtList from '../AgentPropertyListing/listing';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import './profiles.css'
 
 
 const agentArray=[
@@ -51,6 +53,41 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 
 const Profile =()=>{
+  const [full_name, setFullName] = useState("")
+  const [agentId, setAgentId] = useState("")
+  const [propertyList, setPropertyList] = useState(Boolean)
+  const [contactDetails, setContactDetails] = useState(Boolean)
+
+  const fetchAgentId = async (client_agentId)=>{
+    const url = `http://localhost:5001/agent-single/${client_agentId}`
+      try{
+          const response = await axios.get(url)
+          setFullName(response.data.full_name)       
+      }
+      catch(err){
+          console.log("Error Message: " + err.message)
+      }
+  }
+  const displayDetails=()=>{
+    setContactDetails(true)
+    setPropertyList(false)
+  }
+
+  const agentPropertiesTable=()=>{
+    setPropertyList(true)
+    setContactDetails(false)
+  }
+    useEffect(()=>{
+
+          const client_agentId = localStorage.getItem('client_agentId');
+
+          if( client_agentId ){
+              setAgentId(client_agentId)
+          }
+          fetchAgentId(client_agentId);
+          setContactDetails(true)
+    },[])
+    
     return (
         <div className='profiles'>
             <div className='Avatar'>
@@ -65,18 +102,23 @@ const Profile =()=>{
                         >
                         <Avatar alt="Remy Sharp" src={agentArray[0].img}/>
                     </StyledBadge>
-                    <h4 className='avatarname'>Ben Clyde Sikanwe</h4>
+                    {full_name && <h4 className='avatarname'>{full_name}</h4>}
                 </Stack>
                 <div className='avatadetails'>
-                    <p className='avatarcontact'>Contact Details</p>
-                    <Link to='/property-listing'><p className='avatarprop'>Agent Properties</p></Link>
+                    <p className='avatarcontact' onClick={displayDetails}>Contact Details</p>
+                    {/* <Link to='/property-listing'><p className='avatarprop'>Agent Properties</p></Link> */}
+                    <p className='avatarprop' onClick={agentPropertiesTable}>Agent Properties</p>
                     <p className='avatarcomment'>Comments</p>
                 </div>
                 
             </div>
             <div className='contact'>
-                <ContactDetails/>
+                {contactDetails && <ContactDetails/>}
             </div>
+            <div className='property'>
+                {propertyList && <ProperrtList/>}
+            </div>
+            
         </div>
     )
 }

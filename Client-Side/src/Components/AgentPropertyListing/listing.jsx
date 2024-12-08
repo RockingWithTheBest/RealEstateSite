@@ -2,8 +2,9 @@ import React,{useState, useEffect} from 'react';
 import DataTable from "react-data-table-component";
 import TextField from '@mui/material/TextField';
 import { useParams } from 'react-router-dom';
-import {useNavigate} from 'react-router-dom'
-import './listing.css'
+import {useNavigate} from 'react-router-dom';
+import axios from 'axios';
+import './listing.css';
 
 const agentProperties = [
     {
@@ -33,28 +34,10 @@ const agentProperties = [
 ]
 const columns =(mapdisplay)=>[
     {
-      name:'Id',
-      selector:row=>row.id,
-      sortable : true,
-      width: '100px'
-    },
-    {
       name:'Location',
-      selector:row=>row.Location,
+      selector:row=>row.name,
       sortable : true,
-      width: '200px'
-    },
-    {
-      name:'Rooms',
-      selector:row=>row.Rooms,
-      sortable : true,
-      width: '200px'
-    },
-    {
-        name:'Price',
-        selector:row=>row.Price,
-        sortable : true,
-        width: '200px'
+      width: '400px'
     },
     {
         name:'Action',
@@ -76,10 +59,23 @@ const columns =(mapdisplay)=>[
     }
   }
 const Listing= ()=>{
-    const [records, setRecords] = useState(agentProperties);
+    // const [records, setRecords] = useState(agentProperties);
     const [rowid, setId] = useState("");
+    const [mapCoordinates, setMapCoordinates] = useState([])
+    const [cloneMapCoordinates, setCloneMapCoordinates] = useState([])
     const navigate = useNavigate();
 
+    const fetchCoordinates = async() => {
+        const url = 'http://localhost:1000/coordinates';
+        const response  = await axios.get(url);
+        const dataResponse = response.data;
+        const agentId = localStorage.getItem('client_agentId');
+        const filteredResponseList = dataResponse.filter(row => row.agent_id === Number(agentId));
+        console.log("AGENT ID", agentId);
+        console.log("FILTERS RECORDS", filteredResponseList);
+        setMapCoordinates(filteredResponseList);
+        setCloneMapCoordinates(filteredResponseList);
+    }
     const mapdisplay = (data) => {
       setId(data.id);
         console.log("GOOD", data.id)
@@ -89,14 +85,37 @@ const Listing= ()=>{
         }
         // setId(row.id);
     }
+
+    const filterDetails = (event) => {
+        let query = event.target.value;
+        if(query===''){
+          setMapCoordinates(cloneMapCoordinates);
+        }
+        else{
+            const filteredList = mapCoordinates.filter(row => row.name.toLocaleLowerCase().includes(query.toLocaleLowerCase()));
+            setMapCoordinates(filteredList);
+        }
+    }
+    const textFileStyles ={
+      color: "black",
+      backgroundColor: 'white', // Set background color to white
+      '& .MuiFilledInput-root': {
+        backgroundColor: 'white'}
+    }
     useEffect(() =>{
-     
+      fetchCoordinates();
     }, []);
     return(
         <div className='listins'>
-            <TextField id="filled-basic" label="Filled" variant="filled" />
+            <TextField 
+            sx={textFileStyles}
+              id="filled-basic" 
+              label="filter by location" 
+              variant="filled" 
+              onChange={filterDetails}
+            />
             <div className='tableData'>
-                <DataTable columns ={columns(mapdisplay)} data={records} customStyles={customStyles} pagination />
+                <DataTable columns ={columns(mapdisplay)} data={mapCoordinates} customStyles={customStyles} pagination />
             </div>
        
         </div>

@@ -44,3 +44,8 @@ h4.avatarname {
 .avatarcontact:hover, .avatarprop:hover, .avatarcomment:hover{
     font-size: 24px;
 }
+
+.property {
+    position: relative;
+    left: -217px;
+}
