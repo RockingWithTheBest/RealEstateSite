@@ -7,6 +7,8 @@ import PropertyListing from './Pages/PropertyListing/propertylisting';
 import SingleProperty from './Components/AgentPropertyListing/mapdisplay'
 import ClientRegister from './Pages/Register/client'
 import LoginPage  from './Pages/Login/loginpage'
+import ClientEdit from './Pages/editDetails/client'
+import BrowserProperty from './Pages/BroswerPropertiesByAgents/browserProperty'
 import './App.css';
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
           <Route path='/singleProperty/:ID' element={<SingleProperty/>} />
           <Route path='/register-client' element={<ClientRegister/>}/>
           <Route path='/login' element={<LoginPage/>}/>
+          <Route path = '/edit-client/:client_id' element={<ClientEdit/>}/>
+          <Route path='/browser-property/:client_id' element={<BrowserProperty/>}/>
         </Routes>
     </BrowserRouter>
   );
