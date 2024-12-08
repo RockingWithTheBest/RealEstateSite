@@ -35,6 +35,18 @@ app.get('/neighborhoods', async(req, res)=>{
     // This route should return a list of neighborhoods in the database.
 });
 
+
+app.get('/neighborhoods/:id', async(req, res)=>{
+    const id = parseInt(req.params.id);
+    const result = await dbConnect.query("SELECT * FROM \"neighborhoods\" WHERE property_id = $1", 
+        [id]);
+    if(result.rows.length > 0){
+        res.json(result.rows[0]);
+    }
+    else{
+        res.status(404).send("Neighborhood not found");
+    }
+}); //
 app.post('/neighborhoods', async(req, res)=>{
     const {name, description, amenities, number_of_parks, property_id} = req.body;
     if(!(name&&description&&amenities&&number_of_parks&&property_id)){

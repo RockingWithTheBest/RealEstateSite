@@ -87,11 +87,12 @@ app.get('/client-data', async(req, res) => {
 app.put('/client-edit/:id', async(req, res) => {
     const {id} = req.params;
     try{
-        const { full_name, phone_number, email_address, passport_number } = req.body;
-        
+        const { full_name, phone_number, email_address, passport_number, agent_id , password} = req.body;
+        const hashedpassword = await bcrypt.hash(password, 10)
+        console.log(hashedpassword)
         await dbConnect.query(
-            "UPDATE \"Clients\" SET full_name=$1, phone_number=$2, email_address=$3, passport_number=$4 WHERE id=$5",
-            [ full_name, phone_number, email_address, passport_number, id ]
+            "UPDATE \"Clients\" SET full_name=$1, phone_number=$2, email_address=$3, passport_number=$4, agent_id =$5, password =$6 WHERE id=$7",
+            [ full_name, phone_number, email_address, passport_number, agent_id, hashedpassword ,id ]
         )
         const result = await dbConnect.query("SELECT * FROM \"Clients\" WHERE id=$1",
             [id]

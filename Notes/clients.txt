@@ -5,4 +5,24 @@
     passport_number:"ZN999333"
     password:"PAssword1!"
     phone_number:"761234567"
+},
+ {
+        "full_name": "Clyde Mwape",
+        "password": "123Garazo!",
+        "phone_number": 761234567,
+        "email_address": "sikanweclyde@gmail.com",
+        "passport_number": "ZN000001",
+        "agent_id": 4,
+         agent_id: "14"
+},
+{
+        "full_name": "Charlse Mundenda",
+        "password": "Hey123!",
+        "phone_number": 761234567,
+        "email_address": "charlseB@gmail.com",
+        "passport_number": "ZN999333",
+        "agent_id": 4,
+         agent_id: "14"
 }
+
+    

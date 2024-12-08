@@ -34,6 +34,17 @@ app.get('/properites', async (req, res) =>{
     res.json(results.rows);
 })
 
+app.get('/properites/:id', async (req, res)=>{
+    const id = parseInt(req.params.id);
+    const result = await dbConnect.query("SELECT * FROM \"Properties\" WHERE agent_id = $1", 
+        [id]);
+    if(result.rows.length > 0){
+        res.json(result.rows);
+    }
+    else{
+        res.status(404).send('Property not found.');
+    }
+})
 app.post('/properites', async (req, res) =>{
     const { name, address, location, number_of_rooms, agent_id , price} = req.body;
     if (!(name && address && location && number_of_rooms && agent_id && price)) {
