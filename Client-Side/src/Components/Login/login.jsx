@@ -62,6 +62,7 @@ const login =()=>{
         localStorage.setItem('client_agentId', response.data[0].agent_id)
         localStorage.setItem('client_password', response.data[0].password)
         localStorage.setItem('client_passport_number', response.data[0].passport_number)
+        localStorage.setItem('client_id', response.data[0].id)
     }
 
     useEffect(()=>{
