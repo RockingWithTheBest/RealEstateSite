@@ -1,2 +1,4 @@
 npm i yup
 npm install axios
+npm i reactjs-popup
+npm install jspdf jspdf-autotable
