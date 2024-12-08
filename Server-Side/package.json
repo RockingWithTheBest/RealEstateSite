@@ -7,7 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "connection": "nodemon connection.js",
     "client": "nodemon Routes/client.js",
-    "clientLogin": "nodemon Routes/clientLogin.js"
+    "clientLogin": "nodemon Routes/clientLogin.js",
+    "agentlogin":"nodemon Routes/agentLogin.js",
+    "agentidentity":"nodemon Routes/agentIdentity.js",
+    "coordinates":"nodemon Routes/coordinates.js",
+    "properties":"nodemon Routes/properties.js",
+    "neighborhoods":"nodemon Routes/neigbhourhoods.js"
   },
   "keywords": [],
   "author": "",

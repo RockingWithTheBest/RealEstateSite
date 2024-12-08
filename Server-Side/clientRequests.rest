@@ -1,0 +1,14 @@
+GET http://localhost:4001/client-identify
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJDbHlkZSBTaWthbndlIiwicGFzc3BvcnRfbnVtYmVyIjoiWk4wMDAwMDAiLCJlbWFpbF9hZGRyZXNzIjoic2lrYW53ZWNseWRlQGdtYWlsLmNvbSIsInBob25lX251bWJlciI6Nzc3NzU1MTQ5LCJwYXNzd29yZCI6IiQyYiQxMCROOTlEbjlIUnNEZjhzOU1XbE0yM2llWWFpODVEQVJrSHBMNXJRREVHSTB0ODhhUXdkdTNPcSIsImlhdCI6MTczMzE2ODU1MywiZXhwIjoxNzMzMTcwMzUzfQ.pDJ2o6jw0iDILXmAoFxNZs5inWubKaN0OLi7Vg2QER8
+
+
+
+###
+POST /client-login HTTP/1.1
+HOST:localhost:4001
+Content-Type: application/json
+
+{
+    "password":"Password1!",
+    "passport_number":"ZN000000"
+}

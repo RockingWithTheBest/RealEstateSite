@@ -2,6 +2,7 @@ import React from 'react';
 import Vector from '../../assets/HeaderImg/Vector.png';
 import Hanger from '../../assets/HeaderImg/Hanger.png';
 import Button from '@mui/material/Button';
+import {Link} from 'react-router-dom'
 import './Header.css';
 
 const Header =()=>{
@@ -29,8 +30,8 @@ const Header =()=>{
                 <img src={Hanger} alt="" />
             </div>
             <div>
-                <Button className = 'btn-login' variant="outlined"  href =''>Login</Button>
-                <Button className = 'btn-signup' variant="contained" href =''>Sign Up</Button>
+                <Link to = 'login'><Button className = 'btn-login' variant="outlined"  href =''>Login</Button></Link>
+                <Link to ='register-client'><Button className = 'btn-signup' variant="contained" href =''>Sign Up</Button></Link>
             </div>
 
         </div>

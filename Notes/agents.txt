@@ -1,0 +1,18 @@
+{
+    "password":"ChinLind123" ,
+    "email_address":"lindahchingeleshi@gmail.com"
+} 
+
+{
+    "full_name":"Annie Mwape" ,
+    "password":"AnnieMwape23" ,
+    "phone_number":"097788149" ,
+    "email_address":"anniemwape@gmail.com"
+} 
+
+{
+    "full_name":"Bennies Sikanwe" ,
+    "password":"BSikawne345" ,
+    "phone_number":"097788199" ,
+    "email_address":"bsikanwe@gmail.com"
+} 

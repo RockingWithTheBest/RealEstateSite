@@ -27,17 +27,17 @@ const client =()=>{
             .email('Invalid email format')
             .required('Email is required'),
         phone_number: Yup.string()
-            .matches(/^(?:\+260)?(976|977|975|76|77)[0-9]{7}$/,'Invalid phone number format "0761234567"')
-            .required('Phone number is required "0761234567"'),
+            .matches(/^(?:\+260)?(976|977|975|76|77)[0-9]{7}$/,'Invalid phone number format "761234567"')
+            .required('Phone number is required "761234567"'),
         passport_number: Yup.string()
-            .matches(/^ZN\d{6}$/, 'Invalid passport number format')
-            .required('Passport number is required'),
-        // agent_id: Yup.string()
-        //     .matches(/[0-9]/,'Invalid agent ID format')
-        //     .required('Agent ID is required'),
+            .matches(/^ZN\d{6}$/, 'Invalid passport number format ZN123456')
+            .required('Passport number is required ZN123456'),
+        agent_id: Yup.string()
+            .matches(/[4-6]/,'Invalid agent ID format')
+            .required('Agent ID is required'),
         password: Yup.string()
             .min(8,"Password must be at least 10 characters long")
-            .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,}$/, "Password is of invalid format")
+            .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,}$/, "Password is of invalid format e.g Secure@1234")
             .required("Password is required"),
     })
     const FormImgae= {
@@ -60,8 +60,8 @@ const client =()=>{
             email_address: email,
             phone_number : phone_number,
             passport_number: passport_number,
-            // agent_id: agent_id,
-            password: password
+            password: password,
+            agent_id: agent_id
             }
             console.log("DATA" , data);
         const url = 'http://localhost:4000/client-register'
@@ -146,7 +146,7 @@ const client =()=>{
                     />
                     {errors.passport_number && <div className='error'>{errors.passport_number}</div>}
                 </div>
-                {/* <div>
+                <div>
                     <input type = 'number' 
                     placeholder = 'Agent ID'
                     value={agent_id}
@@ -155,7 +155,7 @@ const client =()=>{
                     className='inputfield'
                     />
                     {errors.agent_id && <div className='error'>{errors.agent_id}</div>}
-                </div> */}
+                </div>
                 <div>
                     <Button 
                             type='submit' 

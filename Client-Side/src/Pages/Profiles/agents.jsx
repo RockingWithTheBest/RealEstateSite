@@ -1,10 +1,11 @@
 import React from 'react';
-import Properties from '../../Components/AgentProfiles/profiles'
+import Profiles from '../../Components/AgentProfiles/profiles'
+import Details from '../../Components/ContactDetails/details';
 
 const Agents=()=>{
     return(
         <div>
-            <Properties />
+            <Profiles />
         </div>
     )
 }

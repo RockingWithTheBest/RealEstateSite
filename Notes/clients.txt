@@ -1,0 +1,8 @@
+{
+    agent_id: "5"
+    email_address:"charlseB@gmail.com"
+    full_name:"Charlse Bwalaya"
+    passport_number:"ZN999333"
+    password:"PAssword1!"
+    phone_number:"761234567"
+}

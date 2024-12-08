@@ -1,0 +1,23 @@
+GET http://localhost:5001/agent-identify
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJMaW5kYWggQ2hpbmdlbGVzaGkiLCJlbWFpbF9hZGRyZXNzIjoibGluZGFoY2hpbmdlbGVzaGlAZ21haWwuY29tIiwicGhvbmVfbnVtYmVyIjo5Nzc1NTE0OSwicGFzc3dvcmQiOiIkMmIkMTAkYU5ZVlJwQXl6Y1VjRE1sOVBvb1BadUpSZUo5RUlSQjlUZ3p3YW5zWTJZRE56aGdNM08wWE8iLCJpYXQiOjE3MzMzMTg1MjIsImV4cCI6MTczMzMyMDMyMn0.xJyoJqQJEMnTEobKFMVaTn74y_TL9NAAknJYF4ER8-A
+
+
+
+###
+POST /token HTTP/1.1
+Host: localhost:1112
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNseWRlIiwiaWF0IjoxNzMyNjQ4NTg2fQ.yEBXjGT8nGFylqAoQ5rHV77AeW3yyUMbXZK95_fuXKw"
+}
+
+###
+POST /agent-login HTTP/1.1
+Host: localhost:5000
+Content-Type: application/json
+
+{
+    "password":"ChinLind123" ,
+    "email_address":"lindahchingeleshi@gmail.com"
+}
