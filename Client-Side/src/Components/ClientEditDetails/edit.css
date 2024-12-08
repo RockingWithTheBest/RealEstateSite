@@ -1,0 +1,15 @@
+.lets-edit {
+
+    height: 100vh;
+    color: black;
+    font-family: 'Plus Jakarta Sans';
+    display: flex;
+    justify-content: center;
+    /* background: linear-gradient(135deg, #00aaff, #0047ab); */
+    background: linear-gradient(to right, #E0DEF7, #7065F0);
+}
+
+form.form-update {
+    display: flex;
+    flex-direction: column;
+}
