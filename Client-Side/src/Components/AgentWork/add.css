@@ -1,0 +1,95 @@
+
+div#map-id {
+    width: 62vw;
+    height: 59vh;
+}
+
+.map-add {
+    display: flex;
+    justify-content: center;
+    background: #F0EFFB;
+    padding-top: 51px;
+}
+
+form.input-coordinates-form{
+    background: #100a55;
+    display: flex;
+    flex-direction: column;
+    padding: 31px;
+    gap: 13px;
+    width: 270px;
+    height: 298px;
+    border-radius: 6px;
+    font-family: 'Plus Jakarta Sans';
+}
+
+.form-neighborhood{
+    background: #100a55;
+    display: flex;
+    flex-direction: column;
+    padding: 31px;
+    gap: 13px;
+    width: 270px;
+    height: 298px;
+    border-radius: 6px;
+    font-family: 'Plus Jakarta Sans';
+}
+.form-add-property{
+    background: #100a55;
+    display: flex;
+    flex-direction: column;
+    padding: 31px;
+    gap: 13px;
+    width: 270px;
+    height: 372px;
+    border-radius: 6px;
+    font-family: 'Plus Jakarta Sans';
+}
+
+input.property-input {
+    color: black;
+    background: white;
+    height: 45px;
+    border-radius: 7px;
+    font-size: 22px;
+}
+.form-add-property  button , .form-neighborhood button {
+    background: #7065F0;
+}
+.input-coordinates-form input {
+    height: 67px;
+    background: white;
+    font-size: 16px;
+    border-radius: 6px;
+    color: black;
+}
+
+.input-coordinates-form h2 {
+    font-size: 28px;
+    color: white;
+}
+
+.work {
+    background: #F0EFFB;
+    display: flex;
+    justify-content: center;
+    padding-top: 76px;
+    padding-bottom: 68px;
+}
+
+.property-page {
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 34px;
+}
+
+.neighbor-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-top: 58px;
+}

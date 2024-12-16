@@ -1,0 +1,35 @@
+.mainbody{
+    background-color: #F0EFFB;
+    height: 100vh;
+    color: #000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    gap: 328px;
+    color: white;
+    padding: 10px;
+    font-family: 'Plus Jakarta sans';
+    font-size: 15px;
+}
+
+button.addbtn{
+    background: linear-gradient(150deg, #399FD8 18%, #0775B4 30%, #003756 64%);
+}
+.action-btn {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+.menu-para{
+    cursor: pointer;
+}
+
+.coordinates-action, .property-actions, .neigh-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 87px;
+}
