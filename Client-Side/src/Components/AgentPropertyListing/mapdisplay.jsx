@@ -17,6 +17,7 @@ const mapShow=()=>{
 
     useEffect(()=>{
         const fetchNeighborhoods = async()=>{
+ 
             if(propertyDetails){
                 try{
                     const url = 'http://localhost:4112/neighborhoods';
@@ -38,7 +39,7 @@ const mapShow=()=>{
     useEffect(()=>{ 
         const fetchMapCoordinates = async() =>{
             try{
-                const url = 'http://localhost:1000/coordinates';
+                const url = `http://localhost:1000/coordinate-single/${ID}`;
                 const responseCoordinates  = await axios.get(url);
                 const coordinates = responseCoordinates.data.map(item=>
                     JSON.parse((item.grid_number))
@@ -58,11 +59,12 @@ const mapShow=()=>{
             try{
                 const url = 'http://localhost:4111/properites';
                 const responseProperites = await axios.get(url);
-                const property = responseProperites.data.find(prop => prop.coordinates_id === parseInt(ID));
+                
+                const property = responseProperites.data.find(prop => prop.coordinates_id  === parseInt(ID));
                 if(property){
                     setPropertyDetails(property)
-                    details = property
-                }
+                  
+                }               
             }
             catch(error){
                 console.log("Error Message: " + error.message);
@@ -76,7 +78,6 @@ const mapShow=()=>{
 
             if((mapCoordinates.length && propertyDetails&&neighborhood)){
                 const map = L.map(mapRef.current).setView([-15.55847, 28.27555], 13);
-
                 // Add tile layer
                 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     maxZoom: 19,
@@ -87,39 +88,31 @@ const mapShow=()=>{
                 const details = propertyDetails;
                 // const coords = [[-15.40685, 28.34593], [-15.44690, 28.25675], [-15.55847, 28.27555], [-15.51712, 28.27555], [-15.44425, 28.44695], [-15.38856, 28.42669]];
                 const coords = mapCoordinates;
-
+    
                 const areas = neighborhood;
-                console.log("Area: " )
-                console.log(neighborhood)
-                
-                for(let i = 0; i <coords.length; i++) {
-                    const pop = L.popup({
-                        closeOnClick: true,
-                    }).setContent(
-                        '<h4 style={{fontStyle: "italic"}}>'+
-                        ' Property Name: '+details.name+'<br>'+
-                        ' Price : '+details.price+'<br'+
-                        ' Number of Rooms: ' + details.number_of_rooms + '<br>' +
-                        ' Location: ' + details.location +'<br>' +
-                        ' Description: '+ neighborhood.description+'<br>'+
-                        ' Amenities: '+neighborhood.amenities+'<br>'+
-                        ' Number of Parks: '+neighborhood.number_of_parks+'<br>'
-                        );
-        
-                    const marker = L.marker(coords[ID]).addTo(map).bindPopup(pop);
-        
-                    const toollip = L.tooltip({
-                        permanent:true
+                    
+
+
+                const index = parseInt(ID) - 1; // Convert ID to integer and subtract 1
+                if (coords[0]) {
+                    const marker = L.marker(coords[0]).addTo(map).bindPopup(
+                        L.popup().setContent(
+                            `<h4 style="font-style: italic">Property Name: ${details.name}<br>
+                             Price: ${details.price}<br>
+                             Number of Rooms: ${details.number_of_rooms}<br>
+                             Location: ${details.location}<br>
+                             Description: ${neighborhood.description}<br>
+                             Amenities: ${neighborhood.amenities}<br>
+                             Number of Parks: ${neighborhood.number_of_parks}<br></h4>`
+                        )
+                    );
+    
+                    const tooltip = L.tooltip({
+                        permanent: true
                     }).setContent(details.name);
-                    marker.bindTooltip(toollip);
-                         // // Optional: Add a circle and a polygon
-              
-                    // aparts[i].addEventListener('mouseover',() => {
-                    //     map.flyTo(coords[i], 16);
-                    // });
-                    map.flyTo(coords[ID], 16);
-                    }
-                
+                    marker.bindTooltip(tooltip);
+                    map.flyTo(coords[0], 16);
+                }
                     L.polygon([
                         [-15.509, 28.080],
                         [-15.503, 28.060],
@@ -133,14 +126,11 @@ const mapShow=()=>{
                     };
 
             }
-            
-         
-        
          // Initialize the map     
     }, [ID,neighborhood, propertyDetails, mapCoordinates]);
     return (
         <div>
-            <div id="map" ref={mapRef} ></div>   
+            <div id="map" ref={mapRef}></div>   
         </div>
     );
 };
