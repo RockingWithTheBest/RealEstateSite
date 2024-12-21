@@ -72,8 +72,6 @@ app.post('/client-register', async (req, res) => {
     }
 })
 
-
-
 app.get('/client-data', async(req, res) => {
     try{
         const result = await dbConnect.query("SELECT * FROM \"Clients\"");

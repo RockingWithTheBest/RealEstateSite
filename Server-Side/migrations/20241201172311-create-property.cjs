@@ -10,24 +10,35 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING(50)
       },
       address: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING(50)
       },
       number_of_rooms: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING(50)
       },
       location: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING(50)
       },
       price: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING(50)
       },
       agent_id: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       client_id: {
+        allowNull: true,
+        type: Sequelize.INTEGER
+      },
+      coordinates_id:{
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {

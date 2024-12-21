@@ -21,15 +21,15 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
     },
     name:{
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false,
     } ,
     address: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false,
     },
     location: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false,
     },
     number_of_rooms: {
@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     price: {
-      type:DataTypes.STRING,
+      type:DataTypes.STRING(50),
       allowNull: false,
     },
     agent_id: {
@@ -46,8 +46,12 @@ module.exports = (sequelize, DataTypes) => {
     },
     client_id: {
       type:DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
+    coordinates_id:{
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    }
   }, {
     sequelize,
     modelName: 'property',

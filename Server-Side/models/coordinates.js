@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'coordinates',
-    tableName: 'Coordinates', 
+    tableName: 'coordinates', 
   });
   return coordinates;
 };

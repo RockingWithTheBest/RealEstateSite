@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'neighborhood',
-    tableName: 'Neighborhoods',
+    tableName: 'neighborhoods',
   });
   return neighborhood;
 };

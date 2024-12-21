@@ -35,19 +35,44 @@ app.get('/properites', async (req, res) =>{
 })
 
 app.get('/properites/:id', async (req, res)=>{
-    const id = parseInt(req.params.id);
-    const result = await dbConnect.query("SELECT * FROM \"Properties\" WHERE agent_id = $1", 
-        [id]);
-    if(result.rows.length > 0){
-        res.json(result.rows);
+    const {id} = req.params;
+    try{    
+        const result = await dbConnect.query("SELECT * FROM \"Properties\" WHERE agent_id = $1", 
+            [id]);
+        if(result.rows.length > 0){
+            res.json(result.rows);
+        }
+        else{
+            res.status(404).send('Property not found.');
+        }
     }
-    else{
-        res.status(404).send('Property not found.');
+    catch(err) {
+        console.error('Error getting property', err.message);
+        res.status(500).send('Error getting property');
     }
+   
+})
+app.get('/single-properites/:id', async (req, res)=>{
+    const {id} = req.params;
+    try{    
+        const result = await dbConnect.query("SELECT * FROM \"Properties\" WHERE id = $1", 
+            [id]);
+        if(result.rows.length > 0){
+            res.json(result.rows);
+        }
+        else{
+            res.status(404).send('Property not found.');
+        }
+    }
+    catch(err) {
+        console.error('Error getting property', err.message);
+        res.status(500).send('Error getting property');
+    }
+   
 })
 app.post('/properites', async (req, res) =>{
-    const { name, address, location, number_of_rooms, agent_id , price} = req.body;
-    if (!(name && address && location && number_of_rooms && agent_id && price)) {
+    const { name, address, location, number_of_rooms, agent_id , price,  coordinates_id} = req.body;
+    if (!(name && address && location && number_of_rooms && agent_id && price && coordinates_id)) {
         return res.status(400).json({message: "All fields are required."});
     }
     try{
@@ -59,8 +84,8 @@ app.post('/properites', async (req, res) =>{
         }
 
         try{
-            const property = await dbConnect.query('INSERT INTO \"Properties\"(name, address, location, number_of_rooms, price, agent_id) VALUES ($1, $2, $3, $4, $5, $6) RETURNING*',
-                 [name, address, location, number_of_rooms, price, agent_id]
+            const property = await dbConnect.query('INSERT INTO \"Properties\"(name, address, location, number_of_rooms, price, agent_id,coordinates_id) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING*',
+                 [name, address, location, number_of_rooms, price, agent_id,coordinates_id]
             )
             res.json({ message: 'Property added successfully.', property: property.rows[0] });
         }
@@ -68,6 +93,44 @@ app.post('/properites', async (req, res) =>{
             console.error('Error adding property', err.message);
             res.status(500).send('Error adding property');
         }
+    }
+    catch(err){
+        console.error('Error checking property', err.message);
+        res.status(500).send('Error checking property');
+    }
+})
+app.delete('/properties/:id', async(req, res) => {
+    const {id} = req.params;
+    try{
+        await dbConnect.query(
+            'DELETE FROM \"Properties\" WHERE id = $1',
+            [ id ]
+        )
+        res.json({ message: 'Property deleted successfully.' });
+    }
+    catch(err){
+        console.error('Error deleting property', err.message);
+        res.status(500).send('Error deleting property');
+    }
+})
+
+app.put('/properties/:id', async (req, res) => {
+    const {id} = req.params;
+    const { name, address, location, number_of_rooms, agent_id, price, client_id, coordinates_id} = req.body;
+    if (!(name && address && location && number_of_rooms && agent_id && price && coordinates_id)) {
+        return res.status(400).json({message: "All fields are required."});
+    }
+    try{
+        await dbConnect.query('UPDATE \"Properties\"  SET name=$1, address =$2, location=$3, number_of_rooms=$4, agent_id = $5, price = $6, coordinates_id = $7, client_id = $8 WHERE id = $9',
+            [ name, address, location, number_of_rooms, agent_id, price, coordinates_id , client_id ,id ])
+
+        const result = await dbConnect.query("SELECT *FROM \"Properties\" WHERE id =$1",
+            [id]
+        )
+        if(result.rows.length ===0){
+            return res.status(404).send("Property record not found")
+        }
+        res.send({message:"Record updated successfully", record: result.rows[0]});
     }
     catch(err){
         console.error('Error checking property', err.message);

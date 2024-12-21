@@ -22,15 +22,15 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
     },
     type: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false,
     },
     transaction_status: {
-      type:DataTypes.STRING,
+      type:DataTypes.STRING(50),
       allowNull: false,
     },
     price_paid: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false,
     },
     client_id: {

@@ -21,16 +21,16 @@ module.exports = (sequelize, DataTypes) => {
     },
     client: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     } ,
     agent: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     } 
   }, {
     sequelize,
     modelName: 'role',
-    tableName: 'Roles',
+    tableName: 'roles',
   });
   return role;
 };

@@ -37,16 +37,51 @@ app.get('/neighborhoods', async(req, res)=>{
 
 
 app.get('/neighborhoods/:id', async(req, res)=>{
-    const id = parseInt(req.params.id);
-    const result = await dbConnect.query("SELECT * FROM \"neighborhoods\" WHERE property_id = $1", 
-        [id]);
-    if(result.rows.length > 0){
-        res.json(result.rows[0]);
+    const {id} = req.params;
+    try{
+        const result = await dbConnect.query("SELECT * FROM \"neighborhoods\" WHERE id = $1", 
+            [id]);
+        if(result.rows.length > 0){
+            res.json(result.rows);
+        }
+        else{
+            res.status(404).send("Neighborhood not found");
+        }
+    }catch(e){
+        console.error('Error executing query', e.message);
+        res.status(500).send('Error executing query');
     }
-    else{
-        res.status(404).send("Neighborhood not found");
+   
+}); 
+app.put('/neighborhoods/:id', async(req, res)=>{
+    const {id} = req.params;
+    const {name, description, amenities, number_of_parks, property_id} = req.body;
+    if(!(name&&description&&amenities&&number_of_parks&&property_id)){
+        return  res.status(400).send("All fileds are compulsory")
+     }
+ 
+    try{
+        await dbConnect.query("UPDATE \"neighborhoods\" SET name = $1, description =$2, amenities=$3, number_of_parks=$4, property_id=$5 WHERE id = $6",
+            [name, description, amenities, number_of_parks, property_id, id])
+
+        
+            const result = await dbConnect.query("SELECT *FROM \"neighborhoods\" WHERE id =$1",
+                [id]
+            )
+            if(result.rows.length ===0){
+                return res.status(404).send("Neighborhood record not found")
+            }
+            res.send("Record updated successfully");
     }
-}); //
+    catch(err){
+        console.error("Error updating neighborhood", err.message);
+        res.status(500).send("Server error updating neighborhood");
+    }
+
+    if(!(name&&description&&amenities&&number_of_parks)){
+       return  res.status(400).send("All fileds are compulsory")
+    }
+});
 app.post('/neighborhoods', async(req, res)=>{
     const {name, description, amenities, number_of_parks, property_id} = req.body;
     if(!(name&&description&&amenities&&number_of_parks&&property_id)){
@@ -76,6 +111,18 @@ app.post('/neighborhoods', async(req, res)=>{
     catch(err){
         console.log(err);
         res.send("Error adding neighborhood");
+    }
+})
+
+app.delete('/neighborhood/:id', async(req,res) => {
+    const {id} = req.params;
+    try{
+        await dbConnect.query("DELETE FROM \"neighborhoods\" WHERE id = $1", [id]);
+        res.json({message: "Neighborhood deleted successfully"});
+    }
+    catch(err){
+        console.log("ERROR ",err);
+        res.send("Error deleting neighborhood");
     }
 })
 
