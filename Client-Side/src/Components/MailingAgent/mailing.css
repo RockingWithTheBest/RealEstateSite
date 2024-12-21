@@ -1,0 +1,43 @@
+.mailing-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  .mailing-form__label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .mailing-form__input,
+  .mailing-form__textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .mailing-form__textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .mailing-form__submit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .mailing-form__submit:hover {
+    background-color: #45a049;
+  }

@@ -1,4 +1,32 @@
+//CLIENT
 npm i yup
 npm install axios
 npm i reactjs-popup
 npm install jspdf jspdf-autotable
+MUI : npm install @mui/material @emotion/react @emotion/styled , npm install @mui/material @mui/styled-engine-sc styled-components
+Router Dom : npm i react-router-dom 
+Leaflet : npm i react-leaflet, npm install leaflet
+DataTable : npm i react-data-table-component
+Email JS: npm i @emailjs/browser
+
+
+//SERVER
+npm init -y
+npm install --save express
+npm install -g sequelize-cli
+addition of pg: npm install sequelize pg --save
+installization of sequelize : npx sequelize-cli init
+create migration : npx sequelize-cli migration:generate --name init
+create model : npx sequelize-cli model:generate --name Client --attributes full_name:string,passport_number:string
+sending-migration : npx sequelize-cli db:migrate
+axios : npm install axios --save
+nodemon: npm i nodemon
+npm i axios
+npm install cors
+npm install bcrypt
+npm i express jsonwebtoken dotenv
+
+
+ // "test": "echo \"Error: no test specified\" && exit 1",
+ https://www.freepik.com/free-vector/city-buildings-background-design_937995.htm#fromView=keyword&page=1&position=12&uuid=06e0ad8c-ad16-41e1-a081-69b2161e6307
+
