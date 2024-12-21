@@ -21,21 +21,17 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     name: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false,
     },
-    quantity_room:{
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    } ,
     price: 
     {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false,
     },
     client_id:{
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
       references: {
         model: 'clients',
         key: 'id',
@@ -44,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'favorite-property',
-    tableName:'Favorite_Properties',
+    tableName:'favorite-properties',
   });
   return favorite - property;
 };

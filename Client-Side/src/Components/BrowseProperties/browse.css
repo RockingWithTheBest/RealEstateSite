@@ -1,0 +1,82 @@
+.Browse {
+    display: flex;
+    gap: 71px;
+    background: #E2EFFF;
+    height: 100vh;
+}
+.welcome-details {
+    background: #100A55;
+    display: flex;
+    padding-top: 56px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.agent-del {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+}
+.agent-del h1 {
+    font-size: 34px;
+    line-height: 63px;
+}
+
+.agent-del p {
+    color: #C4C4C4;
+    font-size: 25px;
+    font-family: 'Poppins';
+}
+.agent-map {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+.agent-map h2 {
+    font-size: 36px;
+    font-family: 'Poppins';
+    color:white;
+}
+
+.agent-map label {
+    font-size: 25px;
+    font-family: 'Poppins';
+}
+
+.agent-map select {
+    width: 76%;
+    text-align: center;
+    height: 43px;
+    background: white;
+    color: black;
+    font-size: 22px;
+    font-family: 'Poppins';
+    border-radius: 4px;
+    margin-top: 3px;
+}
+
+.popup-props h2 {
+    font-size: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: black;
+    font-family: 'Poppins';
+}
+
+.text-btn {
+    display: flex;
+    gap: 69px;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.welcome-details img {
+    border-radius: 6px;
+    width: 56px;
+    height: 50px;
+    cursor: pointer;
+    margin-top: -55px;
+}

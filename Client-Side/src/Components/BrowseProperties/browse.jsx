@@ -1,16 +1,24 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import Checkbox from '@mui/material/Checkbox';
+import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
+import Favorite from '@mui/icons-material/Favorite';
 import DataTable from 'react-data-table-component';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import PopUpNeighbour from '../popUpNeighborhood/popUpNeighbor'
+import PopUpNeighbour from '../popUpNeighborhood/popUpNeighbor';
+import Back from '../../assets/Agents/back-to-main.png'
 import jsPDF from 'jspdf';
+import {Link} from 'react-router-dom'
 import 'jspdf-autotable';
+import './browse.css';
 
 
+
+const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 const columns =(popUpInfo)=> [
     {
         name: 'Name',
@@ -37,17 +45,17 @@ const columns =(popUpInfo)=> [
     },
     {
         name: 'Cost',
-        width: '200px',
+        width: '140px',
         selector:row=>row.price,
         sortable: true
     },
     {
         name: 'Actions',
-        width: '200px',
+        width: '180px',
         cell: row => (
             <>
                 <Button variant="outlined" onClick={()=>popUpInfo(row.id)}>
-                    Delete
+                    Property info
                 </Button>
             </>    
         )
@@ -77,6 +85,8 @@ const browse =()=>{
         const [cloneProperties, setCloneData] = useState([]);
         const [openClose , setOpenClose] = useState(false);
         const [propertyId, setPropertyId] = useState("")
+        const client_id = localStorage.getItem('client_id')
+        const [fav, setFav] = useState("");
       
 
         const fetchAgents = async()=>{
@@ -150,6 +160,51 @@ const browse =()=>{
         doc.save('Properties_report.pdf')
     }
 
+    const AddToFavorite =async (propertyId)=>{
+       alert('added to properties');
+       console.log("ID",propertyId)
+       //const { name, address, location, number_of_rooms, agent_id , price,  coordinates_id} = req.body;
+       const property_data = await axios.get(`http://localhost:4111/single-properites/${parseInt(propertyId)}`)
+       console.log("PROPRT",property_data.data);
+       const address = property_data.data[0].address;
+       const name = property_data.data[0].name;
+       const location = property_data.data[0].location;
+       const number_of_rooms = property_data.data[0].number_of_rooms;
+       const agent_id = property_data.data[0].agent_id;
+       const price = property_data.data[0].price;
+       const client_Id = client_id;
+       console.log("client_Id",client_Id)
+       const coordinates_id = property_data.data[0].coordinates_id;
+       try{
+                const hey =await axios.put(`http://localhost:4111/properties/${propertyId}`,{
+                    address: address,
+                    name: name,
+                    location: location,
+                    number_of_rooms: number_of_rooms,
+                    agent_id: agent_id,
+                    price: price,
+                    client_id: client_Id,
+                    coordinates_id: coordinates_id
+            })
+           
+       }
+       catch(error){
+            console.log('Error:', error)
+       }
+      
+       try{
+                await axios.post(`http://localhost:9555/favorite`,{
+                    name: name,
+                    client_id: client_id,
+                    price:price
+                });
+                console.log("SUCCES to favs")
+       }
+       catch(error){
+            console.log('Error:', error)
+       }
+   
+    }
     useEffect(()=>{
         filterProperties();
     },[filter_id])
@@ -160,8 +215,9 @@ const browse =()=>{
     },[clientName,email,passport,phone]);
     return(
         <div className='Browse'>
-            <div>
-                <div>
+            <div className='welcome-details'>
+                <Link to ='/Website'><img src={Back} alt="" /></Link>
+                <div className='agent-del'>
                     {clientName && <h1>Welcome, {clientName}</h1>}
                     {clientName && <p>Your details are displayed below</p>}
                     {email && <p>{email}</p>}
@@ -170,9 +226,9 @@ const browse =()=>{
                 </div>
                 
 
-                <div>
+                <div className='agent-map'>
                     <h2>Browse Agents</h2>
-                    <label htmlFor="Real Estate">Real Estate Agents</label>
+                    <label htmlFor="Real Estate">Choose Real Estate Agent</label>
                     <select name = 'Real Estate Agent' label ='Real Estate Agent' value={filter_id} onChange={(e)=>setFilterData(e.target.value)}>
                         {agents && agents.map(agent =>(
                             <option key ={agent.id} value={agent.id}>{agent.full_name}</option>
@@ -181,7 +237,7 @@ const browse =()=>{
                     </select>
                 </div>
             </div>
-            <div>
+            <div className='popup-props'>
                 <h2>Browse Properties</h2>
                 {openClose &&
                     <Popup open={openClose} onClose={()=>setOpenClose(false)}>
@@ -196,24 +252,28 @@ const browse =()=>{
                                         {() => close()}>
                                             Close modal
                                     </button>
+                                    <Checkbox {...label} icon={<FavoriteBorder />} onClick={()=>AddToFavorite(propertyId)}checkedIcon={<Favorite />} />
                                 </div>
                             </div>
                         )
                     }
                     </Popup>}
-                <Button
-                    component="label"
-                    role={undefined}
-                    variant="contained"
-                    tabIndex={-1}
-                    startIcon={<CloudUploadIcon />}
-                    onClick={GeneratePdf}
-                    >
-                    Generate Report
-                </Button>
-                <TextField id="filled-basic" label="Filter by address" variant="filled" onChange={handleAddress}/>
-                <TextField id="filled-basic" label="Filter by cost" variant="filled" onChange={handleCost}/>
-                <DataTable columns ={columns(popUpInfo)} data={properties} customStyles={customStyles} />
+                <div className='text-btn'>
+                    <Button
+                        component="label"
+                        role={undefined}
+                        variant="contained"
+                        tabIndex={-1}
+                        startIcon={<CloudUploadIcon />}
+                        onClick={GeneratePdf}
+                        >
+                        Generate Report
+                    </Button>
+                    <TextField id="filled-basic" label="Filter by address" variant="filled" onChange={handleAddress}/>
+                    <TextField id="filled-basic" label="Filter by cost" variant="filled" onChange={handleCost}/>
+                </div>
+      
+                <DataTable columns ={columns(popUpInfo)} data={properties} customStyles={customStyles} pagination />
             </div>
         </div>
     )

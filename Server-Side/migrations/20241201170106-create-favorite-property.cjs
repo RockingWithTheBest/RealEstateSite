@@ -10,13 +10,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
-      },
-      quantity_room: {
-        type: Sequelize.STRING
+        type: DataTypes.STRING(50),
+        allowNull: false,
       },
       price: {
-        type: Sequelize.STRING
+        type: DataTypes.STRING(50),
+        allowNull: false,
       },
       client_id: {
         type: Sequelize.INTEGER
