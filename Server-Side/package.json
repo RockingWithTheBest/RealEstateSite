@@ -13,7 +13,8 @@
     "coordinates":"nodemon Routes/coordinates.js",
     "properties":"nodemon Routes/properties.js",
     "neighborhoods":"nodemon Routes/neigbhourhoods.js",
-    "favorite":"nodemon Routes/favorite-property.js"
+    "favorite":"nodemon Routes/favorite-property.js",
+    "trans": "nodemon Routes/x  "
   },
   "keywords": [],
   "author": "",
