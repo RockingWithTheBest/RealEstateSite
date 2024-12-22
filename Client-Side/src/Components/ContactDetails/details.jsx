@@ -1,7 +1,10 @@
 import React,{useState,useEffect} from 'react';
 import Bennies from '../../assets/Agents/annie.jpg';
 import Message from '../../assets/Agents/message.png';
+import SendEmail from '../MailingAgent/MailingToAgent'
 import axios from 'axios'
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 import './details.css'
 
 
@@ -27,8 +30,11 @@ const ContactDetails =()=>{
     const [phone_number, setPhoneNumber] = useState("")
     // const [agentId, setAgentId] = useState("")
     const [password, setPassword] = useState("")
-  
+    const [ openclose, setOpenClose] = useState(false)
 
+    const Opening =()=>{
+        setOpenClose(true);
+    }
     const fetchAgentData = async (client_agentId)=>{
         const url = `http://localhost:5001/agent-single/${client_agentId}`
           try{
@@ -54,32 +60,46 @@ useEffect(()=>{
     return(
     <div className='dash'>{
         agentArray.map((agent,index)=>(
-            <div key={index} className='agent'>
-                <div className='displayPhoto'><img src={agent.img} alt={agent.name}/></div>
-                <div className='message'><img src={Message} alt="" /><p>Message</p></div>
-                <div className='agentdetail'>
-                    <div>
-                        {full_name && <h1>{full_name}</h1>}
-                        <p className='location'>{agent.location}</p>
-                        <p>{agent.description}</p>
+                <div key={index} className='agent'>
+                    <div className='displayPhoto'><img src={agent.img} alt={agent.name}/></div>
+                    <div className='message'><img src={Message} alt="" onClick={Opening}/><p>Message</p></div>
+                    <div className='agentdetail'>
+                        <div>
+                            {full_name && <h1>{full_name}</h1>}
+                            <p className='location'>{agent.location}</p>
+                            <p>{agent.description}</p>
+                        </div>
+                        <p className='propeva'>Property Evaluation</p>
+                        <div className='evalaurion'>
+                            <div className='renta'><p className='agentrent '>{agent.rent}</p><p>Rent</p></div>
+                            <div className='buya'><p className='agentbuy'>{agent.buy}</p><p>Buy</p></div>
+                            <div className='sella'><p className='agentsell'>{agent.sell}</p><p >Sell</p></div>
+                        </div>
+                        <div>
+                            {email_address && <p><a href="mailto:your_email@example.com">{email_address}</a></p>}
+                            {phone_number && <p>+(260) - {phone_number}</p>}
+                        </div>
                     </div>
-                    <p className='propeva'>Property Evaluation</p>
-                    <div className='evalaurion'>
-                        <div className='renta'><p className='agentrent '>{agent.rent}</p><p>Rent</p></div>
-                        <div className='buya'><p className='agentbuy'>{agent.buy}</p><p>Buy</p></div>
-                        <div className='sella'><p className='agentsell'>{agent.sell}</p><p >Sell</p></div>
-                    </div>
-                    <div>
-                        {email_address && <p><a href="mailto:your_email@example.com">{email_address}</a></p>}
-                        {phone_number && <p>+(260) - {phone_number}</p>}
-                    </div>
-                </div>
-               
                 
-            </div>
-        ))
-    }
-        </div>
+                    
+                </div>
+            ))
+        }
+        {openclose &&
+             <Popup
+                open ={openclose} onClose={()=>setOpenClose(false)}>
+                    <SendEmail/>
+                    <div>
+                           <button onClick=
+                                {() => close()}>
+                            Close modal
+                        </button>
+                    </div>
+            </Popup>
+        }
+   
+
+    </div>
     )
 }
 

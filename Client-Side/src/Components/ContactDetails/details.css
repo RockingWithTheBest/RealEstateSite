@@ -61,16 +61,19 @@ p.propeva {
 .message img {
     width: 37px;
     height: 50px;
+    cursor: pointer;
 }
 
 .message {
     position: relative;
     top: -331px;
     margin-left: 701px;
+    cursor: pointer;
 }
 .message p {
     font-size: 14px;
     margin-top: -47px;
     margin-left: 106px;
+    cursor: pointer;
 }
 

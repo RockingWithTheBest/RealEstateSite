@@ -1,0 +1,133 @@
+.open{
+    height: 100%; /* Make the body take the full height of the viewport */
+    margin: 0; /* Remove default margin */
+    background: linear-gradient(135deg, #222222 26%, #474747 86%);
+}
+
+.first {
+    padding-top: 12px;
+    font-family: 'Poppins';
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 111px;
+}
+.first h1 {
+    font-size: 64px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    line-height: 1.1;
+}
+.first p {
+    color: #C4C4C4;
+    font-size: 18px;
+    font-family: 'Poppins';
+}
+
+.second {
+    display: flex;
+    margin-top: 42px;
+    flex-direction: row-reverse;
+    padding: 169px;
+}
+
+.buildins {
+    margin-top: -330px;
+    position: relative;
+    left: -168px;
+}
+
+.third button {
+    background: linear-gradient(135deg, #60BBEE 26%, #0A72AD 86%);
+    width: 200px;
+    height: 61px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Poppins';
+    position: relative;
+    left: -648px;
+    margin-bottom: 44px;
+}
+p.ninehun, p.threehun, p.twentyhun {
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Poppins';
+    color: white;
+}
+
+p {
+    color: #C4C4C4;
+    font-size: 18px;
+    font-family: 'Poppins';
+}
+
+.paragraph p {
+    color: white;
+    font-size: 17px;
+    font-family: 'Poppins';
+}
+
+.simpleEncrpt {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 446px;
+}
+
+.almight {
+    display: flex;
+    gap: 31px;
+}
+
+.paragraph {
+    padding: 21px;
+    width: 742px;
+    background: linear-gradient(150deg, #399FD8 18%, #0775B4 30%, #003756 64%);
+}
+
+p.genre:hover {
+    cursor: pointer;
+    background-color: #474747;
+    border-radius: 9px;
+    width: 111px;
+    height: 33px;
+}
+
+p.gen2:hover {
+    cursor: pointer;
+    background-color: #474747;
+    border-radius: 9px;
+    width: 111px;
+    height: 33px;
+}
+
+p.gen3:hover {
+    cursor: pointer;
+    background-color: #474747;
+    border-radius: 9px;
+    width: 111px;
+    height: 33px;
+}
+p.gen4:hover {
+    cursor: pointer;
+    background-color: #474747;
+    border-radius: 9px;
+    width: 111px;
+    height: 33px;
+}
+
+p.gen5:hover {
+    cursor: pointer;
+    background-color: #474747;
+    border-radius: 9px;
+    width: 111px;
+    height: 33px;
+}
+p.gen6:hover {
+    cursor: pointer;
+    background-color: #474747;
+    border-radius: 9px;
+    width: 111px;
+    height: 33px;
+}

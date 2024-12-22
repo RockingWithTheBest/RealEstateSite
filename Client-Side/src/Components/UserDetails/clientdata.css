@@ -33,3 +33,33 @@ img.pencil.icon {
     margin-top: 21px;
     font-size: 22px;
 }
+
+@media (max-width: 790px){
+    .user-data h2 {
+        font-size: 21px;
+    }
+    .div-data p {
+        color: #C4C4C4;
+        font-size: 13px;
+        font-family: 'Poppins';
+    }
+}
+
+@media (max-width: 569px){
+    .user-data h2 {
+        font-size: 15px;
+    }
+    .div-data p {
+        color: #C4C4C4;
+        font-size: 11px;
+        font-family: 'Poppins';
+    }
+    .agent-details p {
+        color: #C4C4C4;
+        font-size: 11px;
+        font-family: 'Poppins';
+    }
+    .popup-content {
+        width: 81%;
+    }
+}

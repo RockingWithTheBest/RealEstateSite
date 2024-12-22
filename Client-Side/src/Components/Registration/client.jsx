@@ -8,6 +8,7 @@ import Facebook from '../../assets/Login/facebook.png';
 import Twitter from '../../assets/Login/twitter.png';
 import LinkedIn from '../../assets/Login/linkedin.png';
 import UserIcon from '../../assets/ClientRegistration/usericon.png';
+import {useNavigate} from 'react-router-dom'
 import './client.css'
 
 const client =()=>{
@@ -17,7 +18,8 @@ const client =()=>{
     const [passport_number, setPassportNumber] = useState("")
     const [agent_id, setAgentId] = useState("")
     const [password, setPassword] = useState("")
-    const [errors, setErrors] = useState("")
+    const [errors, setErrors] = useState("");
+    const navigate = useNavigate();
 
     const validationSchema = Yup.object({
         full_name: Yup.string()
@@ -27,9 +29,10 @@ const client =()=>{
             .email('Invalid email format')
             .required('Email is required'),
         phone_number: Yup.string()
-            .matches(/^(?:\+260)?(976|977|975|76|77)[0-9]{7}$/,'Invalid phone number format "761234567"')
-            .required('Phone number is required "761234567"'),
+            .matches(/^(?:\+260)?77[0-9]{8}$/,'Invalid phone number format "771234567"')
+            .required('Phone number is required "771234567"'),
         passport_number: Yup.string()
+            .transform(value => value.trim()) 
             .matches(/^ZN\d{6}$/, 'Invalid passport number format ZN123456')
             .required('Passport number is required ZN123456'),
         agent_id: Yup.string()
@@ -63,15 +66,16 @@ const client =()=>{
             password: password,
             agent_id: agent_id
             }
-            console.log("DATA" , data);
+        
         const url = 'http://localhost:4000/client-register'
         try{
-            await validationSchema.validate(data, {abortEarly:false})
-           
+            console.log("DATA" )
+            const boy = await validationSchema.validate(data, {abortEarly:false})
+            console.log("boy", boy)
         }
         catch(error){
             console.error("Error message: " + error.message)
-           // alert(`An error occurred while registering data: ${error.message}`)  
+           alert(`An error occurred while registering data: ${error.message}`)  
             const newErrors ={};
                 error.inner.forEach((err) => {
                     newErrors[err.path] = err.message}
@@ -84,6 +88,7 @@ const client =()=>{
             console.log(response.data)
             setErrors({})
             alert("Successfully registered")
+            navigate('/Website')
         }
         catch(error){
             alert("An error occurred while submitting data. Please try again.");
