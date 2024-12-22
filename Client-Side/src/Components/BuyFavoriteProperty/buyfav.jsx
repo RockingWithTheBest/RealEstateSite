@@ -36,13 +36,22 @@ const mortage =()=>{
       setOpenClose(true);
   }
 }
-const PostToTrans=async()=>{
-    await axios.post('http://localhost:9557/transactions',{
-      client_id: client_id,
-      type: type,
-      price_paid: price,
-      transaction_status:"Paid"
-    })
+const PostToTrans=async(e)=>{
+  e.preventDefault();
+  try{
+      await axios.post('http://localhost:9557/transactions',{
+        client_id: client_id,
+        type: type,
+        price_paid: price,
+        transaction_status:"Paid"
+      })
+      alert("Transaction Successful");
+  }
+  catch(error){
+    alert("Something went wrong...");
+    console.error("MESSAGE - ",error);
+  }
+    
 }
 useEffect(()=>{
   fetchFavorite();
@@ -78,8 +87,8 @@ useEffect(()=>{
               onChange={(e)=>setType(e.target.value)}/> 
 
            <input 
-              type="text"
-              placeholder='price_paid' 
+              type="number"
+              placeholder='price' 
               value={price}
               onChange={(e)=>setPrice(e.target.value)}/> 
 
