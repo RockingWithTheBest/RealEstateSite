@@ -193,12 +193,12 @@ const browse =()=>{
        }
       
        try{
-                await axios.post(`http://localhost:9555/favorite`,{
+                const fav = await axios.post(`http://localhost:9555/favorite`,{
                     name: name,
                     client_id: client_id,
                     price:price
                 });
-                console.log("SUCCES to favs")
+                console.log("SUCCES to favs", fav)
        }
        catch(error){
             console.log('Error:', error)
@@ -272,8 +272,8 @@ const browse =()=>{
                     <TextField id="filled-basic" label="Filter by address" variant="filled" onChange={handleAddress}/>
                     <TextField id="filled-basic" label="Filter by cost" variant="filled" onChange={handleCost}/>
                 </div>
-      
-                <DataTable columns ={columns(popUpInfo)} data={properties} customStyles={customStyles} pagination />
+                <div className='data-tt'><DataTable columns ={columns(popUpInfo)} data={properties} customStyles={customStyles} pagination responsive/></div>
+                
             </div>
         </div>
     )

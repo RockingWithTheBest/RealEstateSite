@@ -99,3 +99,60 @@ img.mapsearch {
     width: 258px;
     font-size: 18px;
 }
+
+.material p {
+    font-size: 15px;
+    margin-left: 9px;
+    cursor: pointer;
+}
+
+.mortgage-calculator{
+    background-color: #100A55;
+    color: white;
+}
+
+@media (max-width: 1164px){
+    .sixcards {
+        grid-template-columns: repeat(2, 352px);
+        grid-gap: 17px;
+    }
+}
+
+@media (max-width: 759px){
+    .prop1, .prop2, .prop3, .prop4, .prop5, .prop6 {
+        height: 358px;
+    }
+    .sixcards {
+        grid-template-columns: repeat(2, 262px);
+    }
+    img.prop {
+        width: 262px;
+    }
+}
+@media (max-width: 563px){
+    .sixcards {
+        grid-template-columns: repeat(1, 262px);
+    }
+    .properties h2 {
+        font-size: 23px;
+    }
+    .pickedproperties {
+        font-size: 12px;
+    }
+    p.amount {
+        font-size: 16px;
+    }
+    p.nameplace {
+        font-size: 18px;
+    }
+    p.locationonmap {
+        font-size: 13px;
+    }
+    .material p {
+        font-size: 11px;
+        margin-left: 4px;
+    }
+    .material {
+        gap: 0;
+    }
+}

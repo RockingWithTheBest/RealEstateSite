@@ -76,3 +76,58 @@ img.detailsIcon {
 .not-yet{
     color: black;
 }
+
+@media (max-width: 1320px){
+    .header {
+        column-gap: 17px;
+    }
+}
+
+@media (max-width: 1153px){
+    .header {
+        column-gap: 24px;
+    }
+    div.Resource {
+        margin-right: 89px;
+    }
+}
+
+@media (max-width: 960px){
+    div.Resource {
+        margin-right: -1px;
+    }
+}
+
+@media (max-width: 960px){
+    div.Resource {
+        margin-right: -1px;
+    }
+    .rent-span, .buy-span, .sell-span{
+        display: none;
+    }
+    
+}
+
+@media (max-width: 694px){
+    .Manage, .Resource{
+        display: none;
+    }
+}
+
+@media (max-width: 399px){
+    img.detailsIcon {
+        width: 30px;
+        height: 30px;
+        margin-right: 12px;
+    }
+    .header a {
+        margin-left: -9px;
+    }
+    .header {
+        column-gap: 21px;
+    }
+    button.btn-login {
+        background-color: white;
+        margin-right: 19px;
+    }
+}

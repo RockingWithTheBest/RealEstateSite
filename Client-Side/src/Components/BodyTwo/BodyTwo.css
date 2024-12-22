@@ -42,3 +42,57 @@
     color: #4D5461;
     font-size: 14px;
 }
+
+@media (max-width: 829px){
+    .BodyTwo-Menu h2 {
+        font-size: 16px;
+    }
+    .BodyTwo-Menu p {
+        font-size: 12px;
+    }
+    .BodyTwo-Menu {
+        padding: 35px;
+    }
+}
+
+@media (max-width: 751px) {
+    .BodyTwo-Menu {
+        display: flex;
+        gap: 70px;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 528px) {
+    .BodyTwo-Menu p {
+        font-size: 10px;
+    }
+    .PBLO {
+        grid-column-gap: 17px;
+    }
+    .dropdown p {
+        position: relative;
+        top: -18px;
+    }
+
+}
+
+@media (max-width: 519px) {
+    .check p {
+        position: relative;
+        top: 0px;
+    }
+}
+@media (max-width: 510px) {
+    .check p {
+        position: relative;
+        top: -27px;
+    }
+}
+
+@media (max-width: 421px) {
+    .houseincon p {
+        position: relative;
+        top: -28px;
+    }
+}

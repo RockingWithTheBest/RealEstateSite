@@ -38,10 +38,64 @@ p.BuySellProperty-para {
     color: #000929;
     font-size: 16px;
 }
-
-
-
-
 .heading {
     margin-top: 135px;
+}
+
+@media (max-width: 1139px){
+    span.BuySellProperty {
+        font-size: 46px;
+    }
+    p.BuySellProperty-para {
+        font-size: 17px;
+        margin-top: 23px;
+        margin-bottom: -81px;
+    }
+    .fifty, .ten {
+        color: #7065F0;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .Renters p:last-child, .Properties p:last-child {
+        color: #000929;
+        font-size: 13px;
+    }
+    .heading {
+        margin-top: 25px;
+    }
+    .Renters-Properties {
+        margin-bottom: 29px;
+    }
+}
+
+@media (max-width: 830px) {
+    span.BuySellProperty {
+        font-size: 34px;
+    }
+    p.BuySellProperty-para {
+        font-size: 14px;
+        margin-top: 23px;
+        margin-bottom: -81px;
+    }
+    .fifty, .ten {
+        font-size: 12px;
+    }
+    .Renters p:last-child, .Properties p:last-child {
+        color: #000929;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 609px) {
+    span.BuySellProperty {
+        font-size: 24px;
+    }
+    p.BuySellProperty-para {
+        font-size: 12px;
+        margin-top: 18px;
+        margin-bottom: -113px;
+    }
+    .Renters-Properties {
+        gap: 18px;
+    }
 }

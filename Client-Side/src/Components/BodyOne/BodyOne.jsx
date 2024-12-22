@@ -1,9 +1,9 @@
 import React from 'react';
-import ColorToggleButton from '../ToggleButton/ColorToggleButton';
+
 import IconKey from '../../assets/BodyOneImg/IconKey.png';
 import IconSearch from '../../assets/BodyOneImg/IconSearch.png'; 
 
-import BodyTwo from '../BodyTwo/BodyTwo';
+
 import './BodyOne.css'
 
 
@@ -18,9 +18,6 @@ const BodYOne =() => {
                     </div>
                     
                 </div>
-                <div className='toggle-btn'>
-                    <ColorToggleButton/>
-                </div>
               
             </div>
             <div className='Renters-Properties'>
@@ -34,11 +31,7 @@ const BodYOne =() => {
                     <p className='ten'>10k+ properties</p>
                     <p className='occupance'>and houses ready for occupance</p>
                 </div>
-            </div>
-            <div>
-                <BodyTwo/>
-            </div>
-            
+            </div>            
         </div>
     
     );

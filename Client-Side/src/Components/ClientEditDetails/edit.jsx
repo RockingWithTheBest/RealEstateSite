@@ -59,15 +59,18 @@ const edit =()=>{
     },[client_id, agent_id])
     return(
         <div className="lets-edit">
-            <div>
+            <div className="welcome">
                 {client_id && <h1>Welcome ,{fullName}</h1>}
                 {client_id && <h2>Your Current Details</h2>}
-                {client_id && <p>Names : {fullName}</p>}
-                {client_id && <p>Email: {email}</p>}
-                {client_id && <p>Passport Number: {passport_number}</p>}
-                {client_id && <p>Phone Number: {phone_number}</p>}
+                <div>
+                    {client_id && <p>Names : {fullName}</p>}
+                    {client_id && <p>Email: {email}</p>}
+                    {client_id && <p>Passport Number: {passport_number}</p>}
+                    {client_id && <p>Phone Number: {phone_number}</p>}
+                </div>
+               
             </div>
-            <div>
+            <div className="formIDv">
                 <h1>Edit User Details</h1>
                 <form onSubmit = {userDetails} className="form-update">
                     <TextField 

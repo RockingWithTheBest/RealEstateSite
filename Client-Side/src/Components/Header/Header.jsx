@@ -30,13 +30,13 @@ const Header =()=>{
                 <img src={Vector} alt="" />
                 <span>Estatery</span>
             </div>
-            <div>
+            <div className='rent-span'>
                 <span>Rent</span>
             </div>
-            <div>
+            <div className='buy-span'>
                 <span>Buy</span>
             </div>
-            <div>
+            <div className='sell-span'>
                 <span>Sell</span>
             </div>
             <div className='Manage'>
@@ -69,8 +69,8 @@ const Header =()=>{
                         )
                     } 
                 </Popup>
-                <Link to = 'login'><Button className = 'btn-login' variant="outlined"  href =''>Login</Button></Link>
-                <Link to ='register-client'><Button className = 'btn-signup' variant="contained" href =''>Sign Up</Button></Link>
+                <Link to = '/login'><Button className = 'btn-login' variant="outlined"  href =''>Login</Button></Link>
+                <Link to ='/register-client'><Button className = 'btn-signup' variant="contained" href =''>Sign Up</Button></Link>
             </div>
 
         </div>

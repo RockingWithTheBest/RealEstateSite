@@ -80,3 +80,191 @@
     cursor: pointer;
     margin-top: -55px;
 }
+
+/* DATATABLE */
+.popup-props {
+    overflow-x: auto; /* Enable horizontal scrolling for the DataTable */
+}
+
+.data-table {
+    width: 100%; /* Full width to utilize available space */
+}
+
+.data-table th, .data-table td {
+    padding: 8px; /* Adjust padding for better visibility */
+    font-size: 14px; /* Adjust font size for smaller screens */
+}
+
+@media (max-width: 1540px){
+    .Browse {
+        display: flex    ;
+        gap: 12px;
+    }
+    .agent-del h1, .agent-map h2 {
+        font-size: 27px;
+        line-height: 48px;
+    }
+    .agent-del p {
+        font-size: 18px;
+    }
+    .agent-map label {
+        font-size: 18px;
+        font-family: 'Poppins';
+    }
+    .agent-map select {
+        width: 50%;
+        height: 33px;
+        font-size: 13px;
+    }
+    .welcome-details {
+        width: 448px;
+    }
+    .data-tt {
+        padding: 26px;
+    }
+    .text-btn{
+        position: relative;
+    left: -56px;
+    }
+
+    .text-btn label[data-shrink=false]+.MuiInputBase-formControl .css-voecp4-MuiInputBase-input-MuiFilledInput-input {
+        width: 134px;
+        height: 5px;
+    }
+}
+
+@media (max-width:1236px){
+    .agent-del h1, .agent-map h2 {
+        font-size: 16px;
+        line-height: 29px;
+    }
+    .agent-del p {
+        font-size: 14px;
+    }
+    .agent-map label {
+        font-size: 13px;
+        font-family: 'Poppins';
+    }
+    .agent-map select {
+        width: 50%;
+        height: 33px;
+        font-size: 10px;
+    }
+    .welcome-details {
+        width: 344px;
+    }
+    .agent-del, .agent-map {
+        position: relative;
+        left: 14px;
+        padding: 0;
+    }
+}
+
+@media (max-width: 768px) {
+ 
+    .data-table th, .data-table td {
+        font-size: 0.875rem; /* Reduce font size for smaller screens */
+    }
+    .data-table {
+        display: block; /* Stack rows on smaller screens */
+        overflow-x: auto; /* Enable horizontal scrolling */
+    }
+}
+
+@media (max-width: 480px) {
+    .data-table th, .data-table td {
+        font-size: 0.75rem; /* Further reduce font size for very small screens */
+    }
+}
+
+@media (max-width: 980px) {
+    .popup-props h2 {
+        font-size: 27px;
+        margin-top: 22px; 
+        margin-bottom: 0px; 
+    }
+    .Browse {
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+    }
+    .welcome-details {
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+        align-items: center;
+        height: 117px;
+        padding: 0;
+    }
+}
+
+@media (max-width: 724px) {
+    .text-btn {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+       
+            position: relative;
+            left: 0;
+    }
+}
+
+@media (max-width: 541px) {
+    .text-btn label[data-shrink=false]+.MuiInputBase-formControl .css-voecp4-MuiInputBase-input-MuiFilledInput-input {
+        width: 79px;
+        height: 7px;
+    }
+    label.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-colorPrimary.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-colorPrimary.css-1abvrni-MuiButtonBase-root-MuiButton-root {
+        width: 127px;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 528px){
+    .welcome-details {
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        gap: 11px;
+        align-items: center;
+        height: 117px;
+        padding: 0;
+        justify-content: center;
+    }
+    .welcome-details img {
+        width: 31px;
+        height: 27px;
+    }
+    .agent-del h1, .agent-map h2 {
+        font-size: 12px;
+        line-height: 21px;
+    }
+    .agent-del p {
+        font-size: 9px;
+    }
+    .popup-props h2 {
+        font-size: 20px;
+    }
+    .agent-map label {
+        font-size: 9px;
+        font-family: 'Poppins';
+    }
+    .agent-map select {
+        width: 63%;
+        height: 33px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 360px){
+    .text-btn {
+        display: flex;
+        flex-direction: column;
+    }
+    .agent-del{
+        display: none;
+    }
+}

@@ -1,3 +1,23 @@
 .Neighbourhood {
     color: black;
 }
+
+.Neighbourhood p {
+    color: black;
+    font-size: 20px;
+    font-family: 'Poppins';
+}
+.name-descr {
+    margin-top: 19px;
+    margin-bottom: 19px;
+}
+@media (max-width: 794px){
+    .Neighbourhood h1 {
+        font-size: 22px;
+    }
+    .Neighbourhood p {
+        color: black;
+        font-size: 12px;
+        font-family: 'Poppins';
+    }
+}
