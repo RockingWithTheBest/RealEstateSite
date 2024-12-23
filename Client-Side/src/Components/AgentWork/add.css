@@ -93,3 +93,83 @@ input.property-input {
     gap: 24px;
     margin-top: 58px;
 }
+
+@media (max-width: 1067px){
+    .navbar h2 {
+        font-size: 16px;
+    }
+    button.addbtn {
+        width: 126px;
+        font-size: 12px;
+    }
+    p.menu-para {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1014px){
+    .navbar {
+        gap: 128px;
+    }
+}
+
+
+@media (max-width: 714px){
+    .navbar {
+        display: flex    ;
+        gap: 12px;
+    }
+    .navbar h2 {
+        font-size: 10px;
+    }
+    div#map-id {
+        width: 62vw;
+        height: 27vh;
+    }
+}
+
+@media (max-width: 477px){
+    button.addbtn {
+        width: 80px;
+        font-size: 9px;
+    }
+    p.menu-para {
+        font-size: 10px;
+    }
+    form.input-coordinates-form {
+        width: 216px;
+    }
+    .input-coordinates-form h2 {
+        font-size: 19px;
+    }
+    .input-coordinates-form input {
+        height: 31px;
+        font-size: 13px;
+    }
+    .input-coordinates-form button {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 339px){
+    .form-add-property {
+        width: 223px;
+        height: 338px;
+    }
+
+    input.property-input {
+        height: 32px;
+        font-size: 18px;
+    }
+    .form-add-property {
+        width: 223px;
+        height: 279px;
+    }
+    .form-neighborhood {
+        width: 241px;
+        height: 237px;
+    }
+    .neighbor-page h1 {
+        font-size: 27px;
+    }
+}

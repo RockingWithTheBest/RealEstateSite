@@ -1,4 +1,4 @@
-.sixcardsList {
+.sixcardsList1 {
     display: grid;
     grid-template-columns: repeat(2, 352px);
     grid-gap: 31px;
@@ -27,4 +27,68 @@
 
 .propertyListings {
     background: #F0EFFB;
+}
+
+.propertyListings h1 {
+    font-size: 40px;
+    color: black;
+    font-family: 'Poppins';
+}
+
+h3.propertyListins {
+    font-size: 23px;
+    color: black;
+    font-family: 'Poppins';
+    margin-top: 6px;
+    margin-bottom: 7px;
+}
+  .material1{
+        display: none;
+    }
+@media (max-width: 1029px) {
+    .sixcardsList1 {
+        grid-gap: 15px;
+        display: none;
+    }
+    .prop11, .prop21, .prop31, .prop41, .prop51, .prop61 {
+        height: 216px;
+    }
+    .material1{
+        display: none;
+    }
+    .prop11 img {
+        width: 215px;
+    }
+    p.nameplace1 {
+          font-size: 19px;
+    }
+    p.amount1, p.nameplace1, p.locationonmap1, .material1 {
+        margin-left: 6px;
+    }
+    p.amount1 {
+        font-size: 12px;
+    }
+    .prop11, .prop21, .prop31, .prop41, .prop51, .prop61 {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        width: 222px;
+        align-content: center;
+        align-items: center;
+    }
+    .sixcardsList1 {
+        grid-template-columns: repeat(2, 198px);
+    }
+    p.locationonmap1 {
+        font-size: 12px;
+    }
+    p.nameplace1 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 653px) {
+    .sixcardsList1 {
+        display: none;
+    }
 }

@@ -144,7 +144,7 @@ const coordinatesAction = ()=>{
                         close=>(
                             <div className="modal" >
                                 <div className="content">
-                                    <form action="" onSubmit={handleSubmit}>
+                                    <form action="" onSubmit={handleSubmit} className='neighbo-update'>
                                         <input 
                                             type="text" 
                                             placeholder='Enter the neighborhood name...'

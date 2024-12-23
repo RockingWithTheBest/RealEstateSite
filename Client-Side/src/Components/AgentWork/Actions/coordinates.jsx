@@ -116,16 +116,18 @@ const coordinatesAction = ()=>{
     return(
         <div className='coord-datatable'>
             <DataTable columns={columns(GetUpdateRecordId, DeleteRecord)} 
+            className='data'
             data = {records} 
             customStyles = {customStyles} 
-            pagination  />
+            pagination  
+            responsive/>
             {openUpdate &&
                 <Popup open={openUpdate} onClick={()=>setOpenUpdate(false)}>
                     {
                         close=>(
                             <div className="modal" >
                                 <div className="content">
-                                    <form action="" onSubmit={handleSubmit}>
+                                    <form action="" onSubmit={handleSubmit} className='update-coordinates'>
                                         <input 
                                             type="text" 
                                             placeholder='Enter the coordinates...'
@@ -155,9 +157,6 @@ const coordinatesAction = ()=>{
                 }
                 </Popup>
             }
-            <div className='popupUpdate'>
-                
-            </div>
         </div>        
     )
 }

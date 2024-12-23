@@ -14,7 +14,7 @@
     "properties":"nodemon Routes/properties.js",
     "neighborhoods":"nodemon Routes/neigbhourhoods.js",
     "favorite":"nodemon Routes/favorite-property.js",
-    "trans": "nodemon Routes/x  "
+    "trans": "nodemon Routes/transaction.js "
   },
   "keywords": [],
   "author": "",

@@ -131,3 +131,143 @@ p.gen6:hover {
     width: 111px;
     height: 33px;
 }
+
+@media (max-width: 1083px){
+    .first {
+        gap: 59px;
+    }
+    .second h1 {
+        font-size: 30px;
+    }
+
+    .buildins img {
+        width: 447px;
+        position: relative;
+        top: 84px;
+    }
+    p.ninehun, p.threehun, p.twentyhun {
+        font-size: 21px;
+        font-weight: 500;
+        font-family: 'Poppins';
+        color: white;
+    }
+    .almight p {
+        color: #C4C4C4;
+        font-size: 12px;
+        font-family: 'Poppins';
+    }
+    .almight {
+        display: flex    ;
+        gap: 31px;
+        margin-left: 24px;
+    }
+    .paragraph p {
+        color: white;
+        font-size: 12px;
+        font-family: 'Poppins';
+    }
+    .second p {
+        color: #C4C4C4;
+        font-size: 13px;
+        font-family: 'Poppins';
+    }
+}
+
+@media (max-width: 939px){
+    .simpleEncrpt {
+        gap: 249px;
+    }
+    .buildins img {
+        display: none;
+    }
+}
+
+@media (max-width: 795px){
+    .first p {
+        color: #C4C4C4;
+        font-size: 14px;
+        font-family: 'Poppins';
+    }
+    .first {
+        gap: 31px;
+    }
+    p.gen3:hover {
+        cursor: pointer;
+        background-color: #474747;
+        border-radius: 9px;
+        width: 88px;
+        height: 24px;
+    }
+    p.gen4:hover, p.gen5:hover,p.gen6:hover {
+        cursor: pointer;
+        background-color: #474747;
+        border-radius: 9px;
+        width: 96px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 638px){
+    .second {
+        display: flex ;
+        margin-top: 42px;
+        flex-direction: row-reverse;
+        padding: 60px;
+    }
+    .simpleEncrpt {
+        display: flex    ;
+        flex-direction: column;
+        gap: 103px;
+        align-items: center;
+    }
+    .paragraph p {
+        color: white;
+        font-size: 8px;
+        font-family: 'Poppins';
+    }
+    .paragraph {
+        width: 90%;
+    }
+}
+
+@media (max-width: 529px){
+    .first p {
+        color: #C4C4C4;
+        font-size: 10px;
+        font-family: 'Poppins';
+    }
+    p.gen4:hover, p.gen5:hover, p.gen6:hover {
+        cursor: pointer;
+        background-color: #474747;
+        border-radius: 9px;
+        width: 77px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 425px){
+    p.gen2,p.gen5, p.gen6{
+        display: none;
+    }
+    .paragraph {
+        width: 89%;
+    }
+}
+
+@media (max-width: 379px){
+    .second h1 {
+        font-size: 18px;
+    }
+    .simpleEncrpt {
+        gap: 43px;
+    }
+    .almight p {
+        font-size: 9px;
+    }
+    .second p {
+        font-size: 10px;
+    }
+    .second {
+        padding: 7px;
+    }
+}

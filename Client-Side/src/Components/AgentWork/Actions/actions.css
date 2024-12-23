@@ -7,3 +7,43 @@
 .neigh-datatable{
     width: 948px;
 }
+form.update-coordinates {
+    display: flex;
+    flex-direction: column;
+    padding: 47px;
+    gap: 6px;
+}
+
+form.update-coordinates, form.update-property, form.neighbo-update {
+    display: flex;
+    padding: 47px;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 16px;
+    font-family: 'Poppins';
+}
+.update-coordinates input , form.update-property input, form.neighbo-update  input{
+    text-align: center;
+    height: 44px;
+    border: 2px solid black;
+    background: white;
+    font-size: 16px;
+}
+@media(max-width: 1023px){
+    .property-datatable {
+        width: 99%;
+        display: flex    ;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+@media (max-width: 960px){
+    .neigh-datatable {
+        width: 97%;
+    }
+}
+@media (max-width: 790px){
+    .coord-datatable {
+        width: 97%;
+    }
+}

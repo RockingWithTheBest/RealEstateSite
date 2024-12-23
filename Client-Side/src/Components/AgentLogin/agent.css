@@ -30,3 +30,32 @@ input.agent-input {
 .form-agent h1 {
     margin-top: 33px;
 }
+
+@media (max-width: 1093px) {
+    input.agent-input {
+        font-size: 18px;
+        width: 292px;
+        height: 39px;
+    }
+    .form-agent button {
+        width: 167px;
+        font-size: 16px;
+    }
+
+    .socialNetworks img {
+        width: 22px;
+    }
+}
+
+@media (max-width: 1031px){
+    .form-agent h1 {
+        font-size: 32px;
+    }
+    input.agent-input {
+        font-size: 16px;
+        width: 253px;
+    }
+    form.form-agent {
+        width: 302px;
+    }
+}

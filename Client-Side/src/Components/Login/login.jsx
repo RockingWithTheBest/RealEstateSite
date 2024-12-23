@@ -6,6 +6,7 @@ import Facebook from '../../assets/Login/facebook.png';
 import Twitter from '../../assets/Login/twitter.png';
 import LinkedIn from '../../assets/Login/linkedin.png';
 import UserIcon from '../../assets/Login/userIcon.avif'
+import { useNavigate } from'react-router-dom';
 import './login.css';;
 
 const login =()=>{
@@ -13,10 +14,7 @@ const login =()=>{
     const [passport_number, setPassNumber] = useState("")
     const [messagePasswords, setMessagePasswords] = useState("")
     const [messagePassPorts, setMessagePassPorts] = useState("")
-
-
-
-
+    const navigate = useNavigate();
 
     const BackGroundImage={
         backgroundImage: `url(${LoginImg})`,
@@ -30,6 +28,7 @@ const login =()=>{
 
     const handleLogin= async(e)=>{
         e.preventDefault();
+        
         try{
             const url = "http://localhost:4001/client-login"
             const response = await axios.post(url, {
@@ -40,6 +39,9 @@ const login =()=>{
             console.log(response.data)
             setMessagePasswords("")
             setMessagePassPorts("")
+            alert("Successfully registered")
+            navigate('/Website')
+            console.log("dddd")
         }
         catch(error){
             setMessagePasswords("Invalid Password")

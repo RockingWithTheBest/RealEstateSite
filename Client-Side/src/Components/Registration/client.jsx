@@ -36,7 +36,7 @@ const client =()=>{
             .matches(/^ZN\d{6}$/, 'Invalid passport number format ZN123456')
             .required('Passport number is required ZN123456'),
         agent_id: Yup.string()
-            .matches(/[4-6]/,'Invalid agent ID format')
+            .matches(/[4-6]/,'Invalid agent ID format, ID is either 4 or 5 or 6')
             .required('Agent ID is required'),
         password: Yup.string()
             .min(8,"Password must be at least 10 characters long")
@@ -72,6 +72,7 @@ const client =()=>{
             console.log("DATA" )
             const boy = await validationSchema.validate(data, {abortEarly:false})
             console.log("boy", boy)
+      
         }
         catch(error){
             console.error("Error message: " + error.message)

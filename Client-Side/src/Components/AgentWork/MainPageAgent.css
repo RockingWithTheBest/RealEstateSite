@@ -33,3 +33,65 @@ button.addbtn{
     justify-content: center;
     margin-top: 87px;
 }
+
+
+@media (max-width: 1067px){
+    .navbar h2 {
+        font-size: 16px;
+    }
+    button.addbtn {
+        width: 126px;
+        font-size: 12px;
+    }
+    p.menu-para {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1014px){
+    .navbar {
+        gap: 128px;
+    }
+}
+
+@media (max-width: 714px){
+    .navbar h2 {
+        font-size: 10px;
+    }
+    .navbar {
+        display: flex;
+        gap: 12px;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 477px){
+    button.addbtn {
+        width: 80px;
+        font-size: 9px;
+    }
+    .navbar {
+        display: flex;
+        gap: 12px;
+        flex-direction: column;
+    }
+    p.menu-para {
+        font-size: 10px;
+    }
+    form.input-coordinates-form {
+        width: 216px;
+    }
+    .input-coordinates-form h2 {
+        font-size: 19px;
+    }
+    .input-coordinates-form input {
+        height: 31px;
+        font-size: 13px;
+    }
+    .input-coordinates-form button {
+        font-size: 12px;
+    }
+}
+@media (max-width: 395px){
+
+}
