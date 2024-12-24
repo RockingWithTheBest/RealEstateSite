@@ -2,7 +2,7 @@
 Обратить внимание 
 Для успешной работы веб-сайта на вашем компьютере должны быть установлены следующие пакеты, если они не установлены:
 
-//Клиентская часть
+//Клиентская часть : 
 npm i yup
 npm install axios
 npm i reactjs-popup
@@ -14,7 +14,7 @@ DataTable : npm i react-data-table-component
 Email JS: npm i @emailjs/browser
 npm i axios
 
-//Серверная часть
+//Серверная часть : 
 npm init -y
 npm install --save express
 npm install -g sequelize-cli
